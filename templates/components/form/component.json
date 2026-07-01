@@ -1,0 +1,7 @@
+{
+  "name": "PrtForm",
+  "description": "Form context provider: Standard Schema validation, dot-path errors, reward-early-punish-late display gating",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

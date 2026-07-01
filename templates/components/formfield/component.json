@@ -1,0 +1,7 @@
+{
+  "name": "PrtFormField",
+  "description": "Form field: label, input, description, error and helper text",
+  "category": "composite",
+  "internalDependencies": ["PrtInput"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}
