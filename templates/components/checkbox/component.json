@@ -1,0 +1,7 @@
+{
+  "name": "PrtCheckbox",
+  "description": "Boolean checkbox with hidden native input, identity-colored check, optional inline label",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

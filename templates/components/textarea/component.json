@@ -1,0 +1,7 @@
+{
+  "name": "PrtTextarea",
+  "description": "Multi-line text input with filled/outline/minimal variants, error and disabled states",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

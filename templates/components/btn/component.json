@@ -1,0 +1,7 @@
+{
+  "name": "PrtBtn",
+  "description": "Button with variant × seed × size matrix, loading and polymorphic root",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

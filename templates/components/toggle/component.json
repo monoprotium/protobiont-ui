@@ -1,0 +1,7 @@
+{
+  "name": "PrtToggle",
+  "description": "Switch with hidden native input (role=switch), identity-colored ON track, optional inline label",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

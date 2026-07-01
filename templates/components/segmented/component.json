@@ -1,0 +1,7 @@
+{
+  "name": "PrtSegmented",
+  "description": "Segmented control: a joined group of cells for single OR multiple selection (size pickers, view switches, filter/format toolbars); seed-tinted active fill",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

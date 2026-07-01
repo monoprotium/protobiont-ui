@@ -1,0 +1,11 @@
+{
+  "name": "PrtTagsInput",
+  "description": "Token field — chips + inline input in one field-looking wrapper; Enter/comma/blur/paste commits, two-step backspace, roving chip focus, reject reason codes",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx",
+    "@vueuse/core"
+  ]
+}

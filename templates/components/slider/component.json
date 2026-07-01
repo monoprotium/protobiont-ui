@@ -1,0 +1,10 @@
+{
+  "name": "PrtSlider",
+  "description": "DAW-grade fader on Pointer Events — relative/absolute drag, tapers (log/dB), Shift-fine, detents, dual thumb, vertical; rides _shared/useValueEngine",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PrtInputNumber",
+  "description": "Number input with stepper buttons; modelValue is number | null — empty is null, never a silent 0",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

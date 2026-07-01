@@ -1,0 +1,7 @@
+{
+  "name": "PrtRadioGroup",
+  "description": "Radio group as a fieldset: options-driven, shared native name, identity-colored checked dot",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

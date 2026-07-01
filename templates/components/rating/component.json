@@ -1,0 +1,10 @@
+{
+  "name": "PrtRating",
+  "description": "Discrete rating radiogroup — abstract square marks (star via icon prop), seed-tinted fill, hover preview, re-click to clear",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

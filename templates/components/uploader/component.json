@@ -1,0 +1,10 @@
+{
+  "name": "PrtUploader",
+  "description": "File selection/validation/preview dropzone — no transport; drag-drop, paste, directory mode, object-URL previews, batched reject reason codes",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}
