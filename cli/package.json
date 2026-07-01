@@ -1,0 +1,24 @@
+{
+  "name": "prt-cli",
+  "version": "0.0.1",
+  "description": "Protobiont UI CLI — copy-source component installer",
+  "type": "module",
+  "bin": {
+    "prt": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "bun run ../scripts/build-registry.ts && bun build ./src/index.ts --outdir ./dist --target=node",
+    "dev": "bun run ./src/index.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "commander": "^14.0.0",
+    "execa": "^9.6.0",
+    "kolorist": "^1.8.0",
+    "pathe": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5"
+  }
+}

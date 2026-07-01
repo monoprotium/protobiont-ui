@@ -1,0 +1,1251 @@
+{
+  "formcheckout": {
+    "name": "formcheckout",
+    "description": "Checkout starter — two flavors (CheckoutSteps multi-step, CheckoutSingle one-page) wiring PrtForm + address fields + radio-card delivery + the #payment-fields iframe slot + order summary; zero money math, app-owned schema",
+    "category": "starter",
+    "internalDependencies": [
+      "PrtCheckoutOrderSummary",
+      "PrtCheckoutAddressFields",
+      "PrtRadioGroup",
+      "PrtForm",
+      "PrtSteps",
+      "PrtCollapsible",
+      "PrtBtn"
+    ],
+    "externalDependencies": [],
+    "folder": "formcheckout",
+    "files": [
+      "CheckoutSingle.vue",
+      "CheckoutSteps.vue",
+      "README.md",
+      "formcheckout.schema.ts"
+    ]
+  },
+  "PrtAppShell": {
+    "name": "PrtAppShell",
+    "description": "Thin CSS-Grid frame — header/sidebar/main/aside/footer regions, auto-track offset (width-agnostic, sizes to the slotted sidebar), optional regions collapse with no jump, main is the sole scroller; owns no state",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "appshell",
+    "files": [
+      "PrtAppShell.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtAudioPlayer": {
+    "name": "PrtAudioPlayer",
+    "description": "Audio transport on useMediaControls + PrtSlider seek/volume, Media Session media keys, opt-in Web-Audio waveform",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtBtn",
+      "PrtSlider"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "audioplayer",
+    "files": [
+      "PrtAudioPlayer.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtAudioRecorder": {
+    "name": "PrtAudioRecorder",
+    "description": "MediaRecorder capture: WebM/Opus output (extension derived from the Blob type, never .mp3), reason-code errors, opt-in level meter, decoupled save(blob, meta)",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtBtn",
+      "PrtAudioPlayer"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "audiorecorder",
+    "files": [
+      "PrtAudioRecorder.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtAvatar": {
+    "name": "PrtAvatar",
+    "description": "Avatar: image with seeded initials/icon fallback",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "avatar",
+    "files": [
+      "PrtAvatar.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtBadge": {
+    "name": "PrtBadge",
+    "description": "Count and status badge: inline or corner overlay, dot mode, seed or intent toned",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "badge",
+    "files": [
+      "PrtBadge.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtBanner": {
+    "name": "PrtBanner",
+    "description": "Hero / promo block recipe — overlay (text over media + oklab scrim) or split (two-col); media is a slot over PrtLazyImg, container-query responsive, fluid cqi heading",
+    "category": "recipe",
+    "internalDependencies": [
+      "PrtLazyImg",
+      "PrtBtn"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "banner",
+    "files": [
+      "PrtBanner.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtBreadcrumb": {
+    "name": "PrtBreadcrumb",
+    "description": "Breadcrumb trail — muted links, ink on the current page, mono slash separator (slot-swappable); wraps cleanly, no truncation logic",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "breadcrumb",
+    "files": [
+      "PrtBreadcrumb.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtBtn": {
+    "name": "PrtBtn",
+    "description": "Button with variant × seed × size matrix, loading and polymorphic root",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "btn",
+    "files": [
+      "PrtBtn.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCard": {
+    "name": "PrtCard",
+    "description": "Surface card with image/header/content/footer slots — hairline edges, tokenized elevation",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "card",
+    "files": [
+      "PrtCard.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCarousel": {
+    "name": "PrtCarousel",
+    "description": "Embla-powered carousel shell: slot slides, ghost arrows, square/circle dot pager, loop/autoplay, seed surfaces",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtBtn"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "embla-carousel-vue",
+      "embla-carousel-autoplay",
+      "@vueuse/core"
+    ],
+    "folder": "carousel",
+    "files": [
+      "PrtCarousel.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtChatBubble": {
+    "name": "PrtChatBubble",
+    "description": "Chat message bubble with the seed-driven arrow tail (CSS-var color, never runtime classes), sent/received alignment and grouping",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "chatbubble",
+    "files": [
+      "PrtChatBubble.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCheckbox": {
+    "name": "PrtCheckbox",
+    "description": "Boolean checkbox with hidden native input, identity-colored check, optional inline label",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "checkbox",
+    "files": [
+      "PrtCheckbox.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCheckoutAddressFields": {
+    "name": "PrtCheckoutAddressFields",
+    "description": "A no-inject grouping of PrtFormField rows with the Baymard address rules baked in (exact autocomplete table, inputmode, Address-Line-2 toggle, country→region combobox); one v-model, names drive form validation",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtFormField",
+      "PrtInput",
+      "PrtCombobox"
+    ],
+    "externalDependencies": [],
+    "folder": "checkoutaddressfields",
+    "files": [
+      "PrtCheckoutAddressFields.vue",
+      "index.ts",
+      "types.ts"
+    ]
+  },
+  "PrtCheckoutOrderSummary": {
+    "name": "PrtCheckoutOrderSummary",
+    "description": "Checkout order-summary panel — pre-formatted price strings only (zero money math), <dl> totals with aria-live, collapsed auto-apply-on-blur promo, optional quantity steppers; flat panel, slots for trust signals",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtLazyImg",
+      "PrtInput",
+      "PrtBtn"
+    ],
+    "externalDependencies": [],
+    "folder": "checkoutordersummary",
+    "files": [
+      "PrtCheckoutOrderSummary.vue",
+      "index.ts",
+      "types.ts"
+    ]
+  },
+  "PrtChip": {
+    "name": "PrtChip",
+    "description": "Tag/label chip: variant × seed matrix, optional icon and dismiss",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "chip",
+    "files": [
+      "PrtChip.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCodeBlock": {
+    "name": "PrtCodeBlock",
+    "description": "Atomic, tree-shakeable code block: zero-dep styled wrapper + an OPTIONAL copied lib/highlight.ts Shiki singleton (fine-grained core + JS regex engine, no WASM). Dual-theme via --shiki-* vars flipped by data-mode (zero re-render, no !important). Unused = zero highlighter bytes; used = one lazy chunk. Leaf component — nothing else may import it.",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "@shikijs/core",
+      "@shikijs/engine-javascript",
+      "@shikijs/langs",
+      "@shikijs/themes"
+    ],
+    "folder": "codeblock",
+    "files": [
+      "PrtCodeBlock.vue",
+      "index.ts",
+      "lib/highlight.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCollapsible": {
+    "name": "PrtCollapsible",
+    "description": "Single-disclosure primitive — quiet trigger row + grid 0fr→1fr height animation (one technique, both browsers); accordion is consumer composition",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "collapsible",
+    "files": [
+      "PrtCollapsible.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCombobox": {
+    "name": "PrtCombobox",
+    "description": "Searchable combobox/autocomplete merge — typed values or freeText, anchored flat panel (popover=manual), filtering with a capped tail, clearable, async loading hooks",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "combobox",
+    "files": [
+      "PrtCombobox.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtCountdown": {
+    "name": "PrtCountdown",
+    "description": "Counts down to a target instant; slot-first parts render, wall-clock tick via useIntervalFn, <time> semantics",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "countdown",
+    "files": [
+      "PrtCountdown.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtDialog": {
+    "name": "PrtDialog",
+    "description": "Modal dialog on the native <dialog> substrate — top layer, token scrim, scroll lock with reserved gutter, Esc/outside close via closedby; confirm is a demo preset",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "dialog",
+    "files": [
+      "PrtDialog.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtDrawer": {
+    "name": "PrtDrawer",
+    "description": "Edge sheet (left/right/bottom) on the native <dialog> substrate — animated slide in AND out (the one JS-assisted exit), token scrim, scroll lock with reserved gutter",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "drawer",
+    "files": [
+      "PrtDrawer.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtEmptyState": {
+    "name": "PrtEmptyState",
+    "description": "Neutral empty-state chrome — icon + one line + one action slot; no intent, no dismiss (that's PrtNotice)",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "emptystate",
+    "files": [
+      "PrtEmptyState.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtExcerpt": {
+    "name": "PrtExcerpt",
+    "description": "Line-clamp with more/less reveal: legacy -webkit-line-clamp combo (interop), instant toggle, optional edge fade, v-model:expanded",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [],
+    "folder": "excerpt",
+    "files": [
+      "PrtExcerpt.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtFab": {
+    "name": "PrtFab",
+    "description": "Floating action button / speed-dial: fan-out actions on Popover API + CSS anchor positioning, placement baked in, seed-tinted",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "fab",
+    "files": [
+      "PrtFab.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtFacet": {
+    "name": "PrtFacet",
+    "description": "Facet-section chrome — header label + active count + clear emit + collapsible body around ANY control; the app owns the filter state",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "facet",
+    "files": [
+      "PrtFacet.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtFilterBar": {
+    "name": "PrtFilterBar",
+    "description": "Checkbox facet group — array v-model with toggle semantics, optional counts and header clear; the app owns filter semantics",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtCheckbox"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "filterbar",
+    "files": [
+      "PrtFilterBar.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtForm": {
+    "name": "PrtForm",
+    "description": "Form context provider: Standard Schema validation, dot-path errors, reward-early-punish-late display gating",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "form",
+    "files": [
+      "PrtForm.vue",
+      "index.ts",
+      "types.ts",
+      "useForm.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtFormField": {
+    "name": "PrtFormField",
+    "description": "Form field: label, input, description, error and helper text",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtInput"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "formfield",
+    "files": [
+      "PrtFormField.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtGallery": {
+    "name": "PrtGallery",
+    "description": "Image-specialized grid: lazyimg cells, uniform-aspect grid or CSS-columns masonry, optional selection, built-in lightbox trigger with the View-Transition morph",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtLazyImg",
+      "PrtLightbox"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "embla-carousel-vue",
+      "embla-carousel-autoplay",
+      "@vueuse/core"
+    ],
+    "folder": "gallery",
+    "files": [
+      "PrtGallery.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtGoToTop": {
+    "name": "PrtGoToTop",
+    "description": "Placed-for-you scroll-to-top button: reveals past a threshold (useWindowScroll), smooth-scrolls up, seed-tinted",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "gototop",
+    "files": [
+      "PrtGoToTop.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtIndexBar": {
+    "name": "PrtIndexBar",
+    "description": "A–Z directory — first-letter grouping + locale sort, link items, and a sticky letter rail with jump + scrollspy",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "indexbar",
+    "files": [
+      "PrtIndexBar.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtInfiniteScroll": {
+    "name": "PrtInfiniteScroll",
+    "description": "Load-more engine — IntersectionObserver sentinel wrapping anything; guarded load-more emit, autoload, loader/end slots",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtLoader"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "infinitescroll",
+    "files": [
+      "PrtInfiniteScroll.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtInput": {
+    "name": "PrtInput",
+    "description": "Text input with filled/outline/minimal variants, error and disabled states",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "input",
+    "files": [
+      "PrtInput.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtInputNumber": {
+    "name": "PrtInputNumber",
+    "description": "Number input with stepper buttons; modelValue is number | null — empty is null, never a silent 0",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "inputnumber",
+    "files": [
+      "PrtInputNumber.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtLanguageSwitcher": {
+    "name": "PrtLanguageSwitcher",
+    "description": "App-owned locale switcher — endonyms with translate=\"no\"/:lang + OPT-IN per-option flag icon class (ready-made Iconify, e.g. i-circle-flags-es), menu/segmented/buttons presentations over PrtMenu/PrtSegmented/PrtBtn; no i18n dep, no locale data",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtMenu",
+      "PrtSegmented",
+      "PrtBtn"
+    ],
+    "externalDependencies": [],
+    "folder": "languageswitcher",
+    "files": [
+      "PrtLanguageSwitcher.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtLazyImg": {
+    "name": "PrtLazyImg",
+    "description": "House image primitive: native lazy loading, reserved aspect box, blur-up/skeleton placeholder, fade-in and error state",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "lazyimg",
+    "files": [
+      "PrtLazyImg.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtLightbox": {
+    "name": "PrtLightbox",
+    "description": "Web-gallery image viewer on the native <dialog> substrate: centered/contained default + fullscreen opt-in, carousel nav, thumbnail rail, counter, click-to-zoom, View-Transition thumbnail morph",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtBtn",
+      "PrtCarousel"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "embla-carousel-vue",
+      "embla-carousel-autoplay",
+      "@vueuse/core"
+    ],
+    "folder": "lightbox",
+    "files": [
+      "PrtLightbox.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtList": {
+    "name": "PrtList",
+    "description": "Typographic list — deliberate rhythm, house square/dash marks, styled links; drop a list in and it looks right",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "list",
+    "files": [
+      "PrtList.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtListing": {
+    "name": "PrtListing",
+    "description": "Grid⇄list collection view — one item array, two presentations, a `view` model for the toggle; auto-fill RWD, gutters solved once",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtCard",
+      "PrtChip"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "listing",
+    "files": [
+      "PrtListing.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtListingParams": {
+    "name": "PrtListingParams",
+    "description": "Spec sheet — name/value rows on a real <dl>, zebra or hairline, mono numerals, per-row value slot",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "listingparams",
+    "files": [
+      "PrtListingParams.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtLoader": {
+    "name": "PrtLoader",
+    "description": "Spinner: the house icon mechanism spinning, seed-tintable",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "loader",
+    "files": [
+      "PrtLoader.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtLoadingBar": {
+    "name": "PrtLoadingBar",
+    "description": "Top loading bar: useLoadingBar() lifecycle (start/trickle/finish/error) — simulated progress, never a looping sweep. Between progress and loader, really neither",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "loadingbar",
+    "files": [
+      "PrtLoadingBar.vue",
+      "index.ts",
+      "types.ts",
+      "useLoadingBar.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtMegaMenu": {
+    "name": "PrtMegaMenu",
+    "description": "Mega menu — whole nav bar with bar-anchored full-width panels (popover + CSS anchor positioning, zero JS layout); data-driven link groups or a per-item panel slot",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "megamenu",
+    "files": [
+      "PrtMegaMenu.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtMenu": {
+    "name": "PrtMenu",
+    "description": "Action menu on the anchored-panel substrate — consumer-provided trigger via slot props, flat or grouped items, danger items, flat full-bleed panel, select-grade keyboard model",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "menu",
+    "files": [
+      "PrtMenu.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtModeToggle": {
+    "name": "PrtModeToggle",
+    "description": "Color-mode switcher recipe — wires useMode() 2-state (light/dark, no system) into a click-to-toggle icon button or PrtSegmented (both visible); kit-owned, no inject",
+    "category": "recipe",
+    "internalDependencies": [
+      "PrtSegmented"
+    ],
+    "externalDependencies": [],
+    "folder": "modetoggle",
+    "files": [
+      "PrtModeToggle.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtNotice": {
+    "name": "PrtNotice",
+    "description": "Inline alert: quiet surface, intent-colored icon, optional dismiss",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "clsx"
+    ],
+    "folder": "notice",
+    "files": [
+      "PrtNotice.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtPagination": {
+    "name": "PrtPagination",
+    "description": "Windowed pagination — boundary pages + ellipsis + sibling window (pure-TS paginate), quiet tabular-nums cells, accent on the current page",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "pagination",
+    "files": [
+      "PrtPagination.vue",
+      "index.ts",
+      "paginate.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtProductCard": {
+    "name": "PrtProductCard",
+    "description": "Storefront card recipe — PrtCard + PrtRating + PrtInputNumber + PrtBtn; slots over booleans, pre-formatted price, controlled favorite",
+    "category": "recipe",
+    "internalDependencies": [
+      "PrtCard",
+      "PrtRating",
+      "PrtInputNumber",
+      "PrtBtn"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "productcard",
+    "files": [
+      "PrtProductCard.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtProgress": {
+    "name": "PrtProgress",
+    "description": "Determinate progress: bar and circle (the 2025 ring). Indeterminate/top-bar duty lives in PrtLoadingBar",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "progress",
+    "files": [
+      "PrtProgress.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtProse": {
+    "name": "PrtProse",
+    "description": "Premium em-free typography wrapper for non-hand-authored content (rendered Markdown, CMS/HTML, body copy) — lobotomized-owl rlh rhythm, two-ratio fluid cqi scale, token-mapped, the not-prose escape hatch",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [],
+    "folder": "prose",
+    "files": [
+      "PrtProse.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtRadioGroup": {
+    "name": "PrtRadioGroup",
+    "description": "Radio group as a fieldset: options-driven, shared native name, identity-colored checked dot",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "radiogroup",
+    "files": [
+      "PrtRadioGroup.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtRating": {
+    "name": "PrtRating",
+    "description": "Discrete rating radiogroup — abstract square marks (star via icon prop), seed-tinted fill, hover preview, re-click to clear",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "rating",
+    "files": [
+      "PrtRating.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtScrollArea": {
+    "name": "PrtScrollArea",
+    "description": "Scoped overlay scrollbar: native scroll + a token-driven custom thumb (no cursor-repulsion, Chrome+Firefox parity, no scroll-jacking)",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "scrollarea",
+    "files": [
+      "PrtScrollArea.vue",
+      "index.ts",
+      "types.ts",
+      "useScrollbar.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSegmented": {
+    "name": "PrtSegmented",
+    "description": "Segmented control: a joined group of cells for single OR multiple selection (size pickers, view switches, filter/format toolbars); seed-tinted active fill",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "segmented",
+    "files": [
+      "PrtSegmented.vue",
+      "index.ts",
+      "navigation.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSelect": {
+    "name": "PrtSelect",
+    "description": "Fully styled select — custom anchored listbox panel (never the native browser dropdown), typed values, option icons, filled/outline/minimal variants",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "select",
+    "files": [
+      "PrtSelect.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSidebar": {
+    "name": "PrtSidebar",
+    "description": "Desktop-first app nav — expanded⇄icon-rail (CSS-var width, grid auto-track coupling), nested groups (grid 0fr→1fr), rail flyouts (PrtMenu anchor substrate) + tooltips, mobile→PrtDrawer; data-array nav, no inject",
+    "category": "composite",
+    "internalDependencies": [
+      "PrtDrawer",
+      "PrtTooltip"
+    ],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "sidebar",
+    "files": [
+      "PrtSidebar.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSkeleton": {
+    "name": "PrtSkeleton",
+    "description": "Loading placeholder: line, block and circle shapes, composed by the consumer",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "skeleton",
+    "files": [
+      "PrtSkeleton.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSlider": {
+    "name": "PrtSlider",
+    "description": "DAW-grade fader on Pointer Events — relative/absolute drag, tapers (log/dB), Shift-fine, detents, dual thumb, vertical; rides _shared/useValueEngine",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "slider",
+    "files": [
+      "PrtSlider.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSteps": {
+    "name": "PrtSteps",
+    "description": "Wizard step indicator row — states derive from the v-model index, square-ish rounded-mark chips (tabular numeral / check), current is the one accent moment, optional clickable back-navigation; buttons and step content belong to the consumer's wizard",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "steps",
+    "files": [
+      "PrtSteps.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtSticky": {
+    "name": "PrtSticky",
+    "description": "Drop-in sticky wrapper with stuck-state styling baked in (hairline + raise on pin), detected via a VueUse IntersectionObserver sentinel",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "sticky",
+    "files": [
+      "PrtSticky.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtTabs": {
+    "name": "PrtTabs",
+    "description": "Underline tabs — ghost triggers over a hairline, one anchor-positioned 2px accent indicator (slides where anchors interpolate, zero JS measurement); optional per-value panels via slots",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "tabs",
+    "files": [
+      "PrtTabs.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtTagsInput": {
+    "name": "PrtTagsInput",
+    "description": "Token field — chips + inline input in one field-looking wrapper; Enter/comma/blur/paste commits, two-step backspace, roving chip focus, reject reason codes",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx",
+      "@vueuse/core"
+    ],
+    "folder": "tagsinput",
+    "files": [
+      "PrtTagsInput.vue",
+      "accept.ts",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtTextarea": {
+    "name": "PrtTextarea",
+    "description": "Multi-line text input with filled/outline/minimal variants, error and disabled states",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "textarea",
+    "files": [
+      "PrtTextarea.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtTimeline": {
+    "name": "PrtTimeline",
+    "description": "Timeline with the full 8-layout alignment matrix (orientation × align) — flex/grid engine, square marks on a hairline, per-item seeds",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "timeline",
+    "files": [
+      "PrtTimeline.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtToast": {
+    "name": "PrtToast",
+    "description": "Toasts: useToast() queue + PrtToaster top-layer host (six positions) + presentational PrtToast (quiet/solid)",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "toast",
+    "files": [
+      "PrtToast.vue",
+      "PrtToaster.vue",
+      "index.ts",
+      "types.ts",
+      "useToast.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtToggle": {
+    "name": "PrtToggle",
+    "description": "Switch with hidden native input (role=switch), identity-colored ON track, optional inline label",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "toggle",
+    "files": [
+      "PrtToggle.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtTooltip": {
+    "name": "PrtTooltip",
+    "description": "Tooltip on CSS anchor positioning + popover hint — zero JS layout",
+    "category": "base",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "@vueuse/core"
+    ],
+    "folder": "tooltip",
+    "files": [
+      "PrtTooltip.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "PrtUploader": {
+    "name": "PrtUploader",
+    "description": "File selection/validation/preview dropzone — no transport; drag-drop, paste, directory mode, object-URL previews, batched reject reason codes",
+    "category": "composite",
+    "internalDependencies": [],
+    "externalDependencies": [
+      "class-variance-authority",
+      "clsx"
+    ],
+    "folder": "uploader",
+    "files": [
+      "PrtUploader.vue",
+      "index.ts",
+      "types.ts",
+      "variants.ts"
+    ]
+  },
+  "splashscreen": {
+    "name": "splashscreen",
+    "description": "Splashscreen starter — Mode A (useSplashDismiss, the first-paint static splash from the boot snippet) + Mode B (PrtTransitionMask, in-app route mask + View Transitions); JS-driven removal (FF allow-discrete bug), readiness chain, no FOUC",
+    "category": "starter",
+    "internalDependencies": [
+      "PrtLoader"
+    ],
+    "externalDependencies": [],
+    "folder": "splashscreen",
+    "files": [
+      "PrtTransitionMask.vue",
+      "README.md",
+      "useSplashDismiss.ts"
+    ]
+  }
+}
