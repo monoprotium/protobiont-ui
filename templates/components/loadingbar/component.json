@@ -1,0 +1,7 @@
+{
+  "name": "PrtLoadingBar",
+  "description": "Top loading bar: useLoadingBar() lifecycle (start/trickle/finish/error) — simulated progress, never a looping sweep. Between progress and loader, really neither",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

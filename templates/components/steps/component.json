@@ -1,0 +1,10 @@
+{
+  "name": "PrtSteps",
+  "description": "Wizard step indicator row — states derive from the v-model index, square-ish rounded-mark chips (tabular numeral / check), current is the one accent moment, optional clickable back-navigation; buttons and step content belong to the consumer's wizard",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

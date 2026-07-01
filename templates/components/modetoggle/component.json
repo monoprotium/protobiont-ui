@@ -1,0 +1,7 @@
+{
+  "name": "PrtModeToggle",
+  "description": "Color-mode switcher recipe — wires useMode() 2-state (light/dark, no system) into a click-to-toggle icon button or PrtSegmented (both visible); kit-owned, no inject",
+  "category": "recipe",
+  "internalDependencies": ["PrtSegmented"],
+  "externalDependencies": []
+}

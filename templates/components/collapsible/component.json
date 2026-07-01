@@ -1,0 +1,10 @@
+{
+  "name": "PrtCollapsible",
+  "description": "Single-disclosure primitive — quiet trigger row + grid 0fr→1fr height animation (one technique, both browsers); accordion is consumer composition",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

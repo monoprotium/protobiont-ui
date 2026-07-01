@@ -1,0 +1,7 @@
+{
+  "name": "PrtSidebar",
+  "description": "Desktop-first app nav — expanded⇄icon-rail (CSS-var width, grid auto-track coupling), nested groups (grid 0fr→1fr), rail flyouts (PrtMenu anchor substrate) + tooltips, mobile→PrtDrawer; data-array nav, no inject",
+  "category": "composite",
+  "internalDependencies": ["PrtDrawer", "PrtTooltip"],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}

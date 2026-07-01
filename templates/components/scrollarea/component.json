@@ -1,0 +1,7 @@
+{
+  "name": "PrtScrollArea",
+  "description": "Scoped overlay scrollbar: native scroll + a token-driven custom thumb (no cursor-repulsion, Chrome+Firefox parity, no scroll-jacking)",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}

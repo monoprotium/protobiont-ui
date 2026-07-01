@@ -1,0 +1,7 @@
+{
+  "name": "PrtAppShell",
+  "description": "Thin CSS-Grid frame — header/sidebar/main/aside/footer regions, auto-track offset (width-agnostic, sizes to the slotted sidebar), optional regions collapse with no jump, main is the sole scroller; owns no state",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

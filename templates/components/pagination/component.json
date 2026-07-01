@@ -1,0 +1,10 @@
+{
+  "name": "PrtPagination",
+  "description": "Windowed pagination — boundary pages + ellipsis + sibling window (pure-TS paginate), quiet tabular-nums cells, accent on the current page",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

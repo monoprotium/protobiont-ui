@@ -1,0 +1,10 @@
+{
+  "name": "PrtTabs",
+  "description": "Underline tabs — ghost triggers over a hairline, one anchor-positioned 2px accent indicator (slides where anchors interpolate, zero JS measurement); optional per-value panels via slots",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

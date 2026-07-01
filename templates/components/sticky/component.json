@@ -1,0 +1,7 @@
+{
+  "name": "PrtSticky",
+  "description": "Drop-in sticky wrapper with stuck-state styling baked in (hairline + raise on pin), detected via a VueUse IntersectionObserver sentinel",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["clsx", "@vueuse/core"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "PrtBreadcrumb",
+  "description": "Breadcrumb trail — muted links, ink on the current page, mono slash separator (slot-swappable); wraps cleanly, no truncation logic",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}
