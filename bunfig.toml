@@ -1,0 +1,4 @@
+# hoisted layout so templates/ (not a workspace) can resolve unocss/cva/vue
+# from the repo root when the demo app loads template files directly
+[install]
+linker = "hoisted"

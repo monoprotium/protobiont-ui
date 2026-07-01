@@ -1,0 +1,27 @@
+{
+  // type-check only (noEmit) via tsgo; Bun runs TS, Vite builds the demo.
+  // scope: pure-TS surfaces (scripts, cli/src, template .ts) — .vue internals
+  // are vue-tsc's job, resolved here via the types/vue-shim.d.ts shim.
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["bun"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "noUncheckedSideEffectImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true
+  },
+  "include": [
+    "types",
+    "scripts",
+    "cli/src",
+    "templates/components/**/*.ts",
+    "templates/config"
+  ]
+}
