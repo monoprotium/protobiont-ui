@@ -1,7 +1,16 @@
 # Protobiont UI
 
 Vue 3 component library with a `prt` CLI. Copy-source (like in shadcn) — components
-are copied into the repo, not installed from a package.
+are copied into the project, not installed from a package.
+
+## Install
+
+Installation via Nix flake:
+
+```sh
+nix profile install github:monoprotium/protobiont-ui   # install prt
+nix run github:monoprotium/protobiont-ui -- list       # or run once
+```
 
 ## Usage
 
