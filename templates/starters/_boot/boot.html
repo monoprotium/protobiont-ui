@@ -1,0 +1,45 @@
+<!--
+  Protobiont UI — shared first-paint boot snippet.
+
+  Two halves, both go in index.html. Copy the <head> half alone for mode-init
+  only; copy both halves to also show the splash (splashscreen Mode A). Paste the
+  <head> half before any stylesheet or app script.
+
+  The mode-init logic matches useMode()'s default (dark-first, two states, no
+  'system'), so there's no dark→light flash when useMode mounts. After mount
+  useMode only reconciles data-mode — this snippet is the sole source of first
+  paint.
+-->
+
+<!-- ── 1. <head>: set data-mode BEFORE paint (selector / PrtModeToggle) ── -->
+<meta name="color-scheme" content="dark light" />
+<script>
+  (function () {
+    // two states, dark-first: only an explicit 'light' pin opts out of dark.
+    var resolved = localStorage.getItem('prt-mode') === 'light' ? 'light' : 'dark';
+    var de = document.documentElement;
+    de.dataset.mode = resolved;
+    de.style.colorScheme = resolved;
+  })();
+</script>
+
+<!-- ── 2. <body>: a SIBLING of <div id="app"> (splashscreen Mode A) ──
+     Vue's reconciler never sees this node, so there is no Teleport/adopt
+     dance — useSplashDismiss() just getElementById's it and removes it.
+     The inline CSS rides token NAMES with a hardcoded dark fallback hex
+     (the kit's real dark --surface-0 #0a0a0a / --ink #ffffff) because at
+     first paint the token stylesheet may not be parsed yet. Swap the SVG for
+     your logo — currentColor only, no hardcoded fill. -->
+<div
+  id="prt-splash"
+  role="status"
+  aria-busy="true"
+  aria-live="polite"
+  style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:var(--surface-0,#0a0a0a);color:var(--ink,#ffffff);opacity:1;transition:opacity 280ms cubic-bezier(.2,0,0,1)"
+>
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <rect x="10" y="10" width="28" height="28" stroke="currentColor" stroke-width="1.5" />
+    <rect x="20" y="20" width="8" height="8" fill="currentColor" />
+  </svg>
+  <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Loading…</span>
+</div>

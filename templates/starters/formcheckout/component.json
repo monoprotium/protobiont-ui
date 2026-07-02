@@ -1,0 +1,15 @@
+{
+  "name": "formcheckout",
+  "description": "Checkout starter — two flavors (CheckoutSteps multi-step, CheckoutSingle one-page) wiring PrtForm + address fields + radio-card delivery + the #payment-fields iframe slot + order summary; zero money math, app-owned schema",
+  "category": "starter",
+  "internalDependencies": [
+    "PrtCheckoutOrderSummary",
+    "PrtCheckoutAddressFields",
+    "PrtRadioGroup",
+    "PrtForm",
+    "PrtSteps",
+    "PrtCollapsible",
+    "PrtBtn"
+  ],
+  "externalDependencies": []
+}

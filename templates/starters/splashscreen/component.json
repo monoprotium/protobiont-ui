@@ -1,0 +1,7 @@
+{
+  "name": "splashscreen",
+  "description": "Splashscreen starter — Mode A (useSplashDismiss, the first-paint static splash from the boot snippet) + Mode B (PrtTransitionMask, in-app route mask + View Transitions); JS-driven removal (FF allow-discrete bug), readiness chain, no FOUC",
+  "category": "starter",
+  "internalDependencies": ["PrtLoader"],
+  "externalDependencies": []
+}
