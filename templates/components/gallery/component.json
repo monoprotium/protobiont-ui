@@ -1,0 +1,7 @@
+{
+  "name": "PrtGallery",
+  "description": "Image-specialized grid: lazyimg cells, uniform-aspect grid or CSS-columns masonry, optional selection, built-in lightbox trigger with the View-Transition morph",
+  "category": "composite",
+  "internalDependencies": ["PrtLazyImg", "PrtLightbox"],
+  "externalDependencies": ["class-variance-authority", "clsx", "embla-carousel-vue", "embla-carousel-autoplay", "@vueuse/core"]
+}

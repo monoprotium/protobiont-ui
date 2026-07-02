@@ -1,0 +1,12 @@
+{
+  "name": "PrtCodeBlock",
+  "description": "Atomic, tree-shakeable code block: zero-dep styled wrapper + an OPTIONAL copied lib/highlight.ts Shiki singleton (fine-grained core + JS regex engine, no WASM). Dual-theme via --shiki-* vars flipped by data-mode (zero re-render, no !important). Unused = zero highlighter bytes; used = one lazy chunk. Leaf component — nothing else may import it.",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "@shikijs/core",
+    "@shikijs/engine-javascript",
+    "@shikijs/langs",
+    "@shikijs/themes"
+  ]
+}

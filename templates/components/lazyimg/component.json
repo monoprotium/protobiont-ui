@@ -1,0 +1,7 @@
+{
+  "name": "PrtLazyImg",
+  "description": "House image primitive: native lazy loading, reserved aspect box, blur-up/skeleton placeholder, fade-in and error state",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

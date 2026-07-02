@@ -1,0 +1,7 @@
+{
+  "name": "PrtCarousel",
+  "description": "Embla-powered carousel shell: slot slides, ghost arrows, square/circle dot pager, loop/autoplay, seed surfaces",
+  "category": "composite",
+  "internalDependencies": ["PrtBtn"],
+  "externalDependencies": ["class-variance-authority", "clsx", "embla-carousel-vue", "embla-carousel-autoplay", "@vueuse/core"]
+}

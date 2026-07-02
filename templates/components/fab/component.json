@@ -1,0 +1,7 @@
+{
+  "name": "PrtFab",
+  "description": "Floating action button / speed-dial: fan-out actions on Popover API + CSS anchor positioning, placement baked in, seed-tinted",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

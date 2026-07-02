@@ -1,0 +1,7 @@
+{
+  "name": "PrtExcerpt",
+  "description": "Line-clamp with more/less reveal: legacy -webkit-line-clamp combo (interop), instant toggle, optional edge fade, v-model:expanded",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": []
+}

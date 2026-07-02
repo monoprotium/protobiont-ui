@@ -1,0 +1,7 @@
+{
+  "name": "PrtAudioPlayer",
+  "description": "Audio transport on useMediaControls + PrtSlider seek/volume, Media Session media keys, opt-in Web-Audio waveform",
+  "category": "composite",
+  "internalDependencies": ["PrtBtn", "PrtSlider"],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}

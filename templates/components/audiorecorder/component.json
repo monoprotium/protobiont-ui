@@ -1,0 +1,7 @@
+{
+  "name": "PrtAudioRecorder",
+  "description": "MediaRecorder capture: WebM/Opus output (extension derived from the Blob type, never .mp3), reason-code errors, opt-in level meter, decoupled save(blob, meta)",
+  "category": "composite",
+  "internalDependencies": ["PrtBtn", "PrtAudioPlayer"],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}

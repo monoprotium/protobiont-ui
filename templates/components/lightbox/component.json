@@ -1,0 +1,7 @@
+{
+  "name": "PrtLightbox",
+  "description": "Web-gallery image viewer on the native <dialog> substrate: centered/contained default + fullscreen opt-in, carousel nav, thumbnail rail, counter, click-to-zoom, View-Transition thumbnail morph",
+  "category": "composite",
+  "internalDependencies": ["PrtBtn", "PrtCarousel"],
+  "externalDependencies": ["class-variance-authority", "clsx", "embla-carousel-vue", "embla-carousel-autoplay", "@vueuse/core"]
+}
