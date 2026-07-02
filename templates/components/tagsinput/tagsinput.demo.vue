@@ -66,52 +66,52 @@
       </div>
     </DemoItem>
     <DemoItem label="backspace on empty input marks, then deletes; arrowleft roves into the chips">
-      <PrtTagsInput v-model="tags" placeholder="Try the keyboard…" />
+      <PrtTagsInput v-model="ex.kbd" placeholder="Try the keyboard…" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Limits — duplicates flash, max rejects" min="26rem">
     <DemoItem label="max 5; re-adding an existing tag flashes its chip">
-      <PrtTagsInput v-model="tags" :max="5" placeholder="Up to five…" />
+      <PrtTagsInput v-model="ex.max5" :max="5" placeholder="Up to five…" />
     </DemoItem>
     <DemoItem label=':allow-duplicates="true" — exact compare is off, repeats are fine'>
-      <PrtTagsInput v-model="tags" allow-duplicates placeholder="Repeats allowed…" />
+      <PrtTagsInput v-model="ex.dups" allow-duplicates placeholder="Repeats allowed…" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Comma opt-out — commas stay literal" min="26rem">
     <DemoItem label=':comma-commits="false" for values like "Doe, Jane" (paste still splits on newlines)'>
-      <PrtTagsInput v-model="tags" :comma-commits="false" placeholder="Author names…" />
+      <PrtTagsInput v-model="ex.comma" :comma-commits="false" placeholder="Author names…" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes" min="26rem">
     <DemoItem label="sm">
-      <PrtTagsInput v-model="tags" size="sm" placeholder="small" />
+      <PrtTagsInput v-model="ex.sm" size="sm" placeholder="small" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtTagsInput v-model="tags" size="lg" placeholder="large" />
+      <PrtTagsInput v-model="ex.lg" size="lg" placeholder="large" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Variants + edges (chips follow the field)" min="26rem">
     <DemoItem label="outline">
-      <PrtTagsInput v-model="tags" variant="outline" placeholder="outline" />
+      <PrtTagsInput v-model="ex.outline" variant="outline" placeholder="outline" />
     </DemoItem>
     <DemoItem label="minimal">
-      <PrtTagsInput v-model="tags" variant="minimal" placeholder="minimal" />
+      <PrtTagsInput v-model="ex.minimal" variant="minimal" placeholder="minimal" />
     </DemoItem>
     <DemoItem label="square">
-      <PrtTagsInput v-model="tags" edges="square" placeholder="square" />
+      <PrtTagsInput v-model="ex.square" edges="square" placeholder="square" />
     </DemoItem>
     <DemoItem label="pill — the sanctioned exception (chips in tag boxes earn it)">
-      <PrtTagsInput v-model="tags" edges="pill" placeholder="pill" />
+      <PrtTagsInput v-model="ex.pill" edges="pill" placeholder="pill" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="States" min="26rem">
     <DemoItem label="error">
-      <PrtTagsInput v-model="tags" error placeholder="invalid topics" />
+      <PrtTagsInput v-model="ex.err" error placeholder="invalid topics" />
     </DemoItem>
     <DemoItem label="disabled">
       <PrtTagsInput :model-value="['locked', 'read-only']" disabled />
@@ -128,7 +128,7 @@
       >
         <template #default="{ inputProps, error, disabled }">
           <PrtTagsInput
-            v-model="tags"
+            v-model="ex.field"
             v-bind="inputProps"
             :error="error"
             :disabled="disabled"
@@ -191,4 +191,6 @@ const form = useForm({
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const tags = ref(['vue', 'unocss', 'dark-mode'])
+// each showcase tags field gets its own array so they edit independently
+const ex = ref<Record<string, string[]>>({ kbd: ['drag', 'drop'], max5: ['one', 'two', 'three'], dups: ['repeat'], comma: [], sm: ['sm'], lg: ['lg'], outline: ['a', 'b'], minimal: ['a'], square: ['x'], pill: ['chip', 'tag'], err: ['BadTag'], field: [] })
 </script>

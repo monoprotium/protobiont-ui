@@ -44,8 +44,8 @@
     </DemoItem>
     <DemoItem label="live — bound to state">
       <div class="flex items-center gap-4">
-        <PrtProgress type="circle" :value="count" />
-        <PrtBtn size="sm" variant="outline" @click="count = Math.min(100, count + 10)">+10</PrtBtn>
+        <PrtProgress type="circle" :value="ex.circle" />
+        <PrtBtn size="sm" variant="outline" @click="ex.circle = Math.min(100, ex.circle + 10)">+10</PrtBtn>
       </div>
     </DemoItem>
   </DemoSection>
@@ -89,4 +89,6 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const count = ref(0)
 const show = ref(false)
+// the circle "live" demo owns its own value so it doesn't move with the bar
+const ex = ref<Record<string, number>>({ circle: 0 })
 </script>

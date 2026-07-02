@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- generated placeholder: solid quiet surface + the lucide `user` glyph
+       (ISC license — same set as the kit's i-lucide-* icons), so the src
+       placeholder matches the no-initials icon fallback. never a photo. -->
+  <rect width="80" height="80" fill="#141519"/>
+  <g transform="translate(40 41) scale(2.2) translate(-12 -12)"
+     fill="none" stroke="#7d828d" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </g>
+</svg>

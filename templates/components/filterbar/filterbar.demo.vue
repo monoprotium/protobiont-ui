@@ -3,16 +3,16 @@
     <DemoItem label="the canonical sidebar facet — counts in the metadata register">
       <div class="flex flex-col gap-3">
         <PrtFilterBar
-          v-model="filters"
+          v-model="category"
           label="Category"
           :items="[
             { value: 'synths', label: 'Synths', count: 12 },
             { value: 'drums', label: 'Drum machines', count: 7 },
             { value: 'interfaces', label: 'Interfaces', count: 9 },
-            { value: 'pedals', label: 'Pedals', count: 23 }
+            { value: 'turntables', label: 'Turntables', count: 23 }
           ]"
         />
-        <p class="font-mono text-xs text-ink-faint">selected: {{ filters }}</p>
+        <p class="font-mono text-xs text-ink-faint">selected: {{ category }}</p>
       </div>
     </DemoItem>
   </DemoSection>
@@ -35,7 +35,7 @@
         :items="[
           { value: 'go', label: 'Go' },
           { value: 'vue', label: 'Vue' },
-          { value: 'php', label: 'PHP' },
+          { value: 'ts', label: 'TypeScript' },
           { value: 'elixir', label: 'Elixir' }
         ]"
       />
@@ -115,4 +115,6 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const open = ref(true)
 const filters = ref<string[]>([])
+// the Live example owns its own array so its `selected:` readout stays honest
+const category = ref<string[]>(['interfaces'])
 </script>

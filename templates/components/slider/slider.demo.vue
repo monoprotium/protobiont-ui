@@ -55,51 +55,51 @@
 
   <DemoSection title="Ticks + snap" min="19rem">
     <DemoItem label="step 25 with marks at the stops">
-      <PrtSlider v-model="level" :step="25" :ticks="[0, 25, 50, 75, 100]" />
+      <PrtSlider v-model="ex.ticks" :step="25" :ticks="[0, 25, 50, 75, 100]" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Relative drag (horizontal)" min="19rem">
     <DemoItem label="no jump on grab — deltas accumulate; track press still jumps">
-      <PrtSlider v-model="level" interaction-mode="relative" :sensitivity="300" readout />
+      <PrtSlider v-model="ex.relative" interaction-mode="relative" :sensitivity="300" readout />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Collision — dual thumb crossing policy" min="19rem">
     <DemoItem label="clamp (default): thumbs stop at each other">
-      <PrtSlider v-model="range" :max="1000" collision="clamp" />
+      <PrtSlider v-model="ex.rClamp" :max="1000" collision="clamp" />
     </DemoItem>
     <DemoItem label="push: dragging through shoves the other thumb">
-      <PrtSlider v-model="range" :max="1000" collision="push" />
+      <PrtSlider v-model="ex.rPush" :max="1000" collision="push" />
     </DemoItem>
     <DemoItem label="swap: thumbs cross and trade places">
-      <PrtSlider v-model="range" :max="1000" collision="swap" />
+      <PrtSlider v-model="ex.rSwap" :max="1000" collision="swap" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes" min="19rem">
     <DemoItem label="sm">
-      <PrtSlider v-model="level" size="sm" />
+      <PrtSlider v-model="ex.sm" size="sm" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtSlider v-model="level" size="lg" />
+      <PrtSlider v-model="ex.lg" size="lg" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Edges" min="19rem">
     <DemoItem label="square">
-      <PrtSlider v-model="level" edges="square" />
+      <PrtSlider v-model="ex.square" edges="square" />
     </DemoItem>
     <DemoItem label="rounded (default)">
-      <PrtSlider v-model="level" edges="rounded" />
+      <PrtSlider v-model="ex.rounded" edges="rounded" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Vertical" min="19rem">
     <DemoItem label="default 12rem tall — any height utility on class wins">
       <div class="flex gap-10">
-        <PrtSlider v-model="level" orientation="vertical" />
-        <PrtSlider v-model="level" orientation="vertical" class="h-32" size="lg" />
+        <PrtSlider v-model="ex.vert1" orientation="vertical" />
+        <PrtSlider v-model="ex.vert2" orientation="vertical" class="h-32" size="lg" />
       </div>
     </DemoItem>
   </DemoSection>
@@ -121,4 +121,9 @@ const level = ref(35)
 const range = ref<[number, number]>([120, 480])
 const gains = ref([0, -7.5, -3, -12])
 const freq = ref(640)
+// each showcase slider gets its own value so they drag independently
+const ex = ref<Record<string, number | [number, number]>>({
+  ticks: 50, relative: 35, sm: 35, lg: 35, square: 35, rounded: 35, vert1: 35, vert2: 35,
+  rClamp: [200, 700], rPush: [200, 700], rSwap: [200, 700],
+})
 </script>

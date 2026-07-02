@@ -2,7 +2,7 @@
   <DemoSection title="Basic" min="19rem">
     <DemoItem label="with helper">
       <PrtFormField
-        v-model="value"
+        v-model="ex.name"
         label="Project name"
         placeholder="my-project"
         helper-text="Lowercase, no spaces."
@@ -10,7 +10,7 @@
     </DemoItem>
     <DemoItem label="required + description">
       <PrtFormField
-        v-model="value"
+        v-model="ex.email"
         label="Email"
         type="email"
         required
@@ -40,6 +40,6 @@ import { ref } from 'vue'
 import DemoItem from '@demo/DemoItem.vue'
 import DemoSection from '@demo/DemoSection.vue'
 
-// bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
-const value = ref('')
+// each field gets its own key so they type independently
+const ex = ref<Record<string, string>>({ name: '', email: '' })
 </script>

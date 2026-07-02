@@ -1,5 +1,5 @@
 <template>
-  <DemoSection title="Live — hover the bar (panels mix with plain links)">
+  <DemoSection title="Live — hover the bar (panels mix with plain links)" min="100%">
     <DemoItem label="data-driven groups: icons + descriptions, Docs is a bare link">
       <PrtMegaMenu
         :items="[
@@ -42,7 +42,7 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Panel slot override — a patch browser, not a link list">
+  <DemoSection title="Panel slot override — a patch browser, not a link list" min="100%">
     <DemoItem label="#panel-{id} drops arbitrary content; close() is a slot prop">
       <PrtMegaMenu :items="[
         { id: 'patches', label: 'Patches' },
@@ -65,7 +65,7 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Click trigger">
+  <DemoSection title="Click trigger" min="100%">
     <DemoItem label='trigger="click" — no hover machinery, popovertarget does it all'>
       <PrtMegaMenu
         trigger="click"
@@ -91,7 +91,7 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Row-bar hover — the opt-in (text-only is the default)">
+  <DemoSection title="Row-bar hover — the opt-in (text-only is the default)" min="100%">
     <DemoItem label='link-hover="bar" — the surface-3 row highlight instead of the ink change'>
       <PrtMegaMenu
         link-hover="bar"
@@ -115,7 +115,7 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Rounded edges — the opt-in (square is the default)">
+  <DemoSection title="Rounded edges — the opt-in (square is the default)" min="100%">
     <DemoItem label='edges="rounded" — tab tops and panel bottom round; the tooth junction stays square'>
       <PrtMegaMenu
         edges="rounded"
@@ -139,7 +139,7 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Alignment">
+  <DemoSection title="Alignment" min="100%">
     <DemoItem label="align=&quot;end&quot; — trigger row sits at the bar's end">
       <PrtMegaMenu
         align="end"

@@ -20,7 +20,7 @@ export interface PrtCarouselProps {
   arrows?: boolean
   // show the dot pager; default true
   dots?: boolean
-  // dot mark shape — square house mark (default) or circle (mindless prop)
+  // dot mark shape — square house mark (default) or circle
   dotShape?: PrtCarouselDotShape
   // decoration: tints arrows + active dot
   seed?: PrtSeed

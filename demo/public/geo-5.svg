@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 240" preserveAspectRatio="xMidYMid slice">
+  <rect width="160" height="240" fill="#404040"/>
+  <text x="80" y="120" fill="#8a8f99" font-family="ui-monospace, monospace"
+        font-size="52" font-weight="500" text-anchor="middle"
+        dominant-baseline="central">5</text>
+</svg>

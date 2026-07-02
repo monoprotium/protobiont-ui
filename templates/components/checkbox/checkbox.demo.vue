@@ -10,7 +10,7 @@
 
   <DemoSection title="Basic" min="12rem">
     <DemoItem label="unchecked → click me">
-      <PrtCheckbox v-model="checked" label="Enable previews" />
+      <PrtCheckbox v-model="ex.basic" label="Enable previews" />
     </DemoItem>
     <DemoItem label="checked (static)">
       <PrtCheckbox :model-value="true" label="Checked" />
@@ -40,13 +40,13 @@
 
   <DemoSection title="Sizes" min="12rem">
     <DemoItem label="sm">
-      <PrtCheckbox v-model="checked" size="sm" label="small" />
+      <PrtCheckbox v-model="ex.sm" size="sm" label="small" />
     </DemoItem>
     <DemoItem label="base">
-      <PrtCheckbox v-model="checked" size="base" label="base" />
+      <PrtCheckbox v-model="ex.base" size="base" label="base" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtCheckbox v-model="checked" size="lg" label="large" />
+      <PrtCheckbox v-model="ex.lg" size="lg" label="large" />
     </DemoItem>
   </DemoSection>
 
@@ -55,13 +55,13 @@
       <PrtCheckbox :model-value="true" disabled label="locked" />
     </DemoItem>
     <DemoItem label="error">
-      <PrtCheckbox v-model="checked" error label="must be accepted" />
+      <PrtCheckbox v-model="ex.err" error label="must be accepted" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Label via slot" min="16rem">
     <DemoItem label="default slot overrides the label prop">
-      <PrtCheckbox v-model="checked">
+      <PrtCheckbox v-model="ex.slot">
         I accept the <span class="underline">terms</span>
       </PrtCheckbox>
     </DemoItem>
@@ -72,7 +72,7 @@
       <PrtFormField label="Notifications" helper-text="Sent on deploy only.">
         <template #default="{ inputProps, error, disabled }">
           <PrtCheckbox
-            v-model="checked"
+            v-model="ex.field"
             v-bind="inputProps"
             :error="error"
             :disabled="disabled"
@@ -91,4 +91,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const checked = ref(false)
+// each showcase checkbox gets its own key so they toggle independently
+const ex = ref<Record<string, boolean>>({ basic: false, sm: false, base: false, lg: false, err: false, slot: false, field: false })
 </script>

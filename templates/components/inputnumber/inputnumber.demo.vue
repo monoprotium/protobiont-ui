@@ -11,9 +11,9 @@
   <DemoSection title="Basic — the null contract, visible" min="19rem">
     <DemoItem label="empty is null, never 0">
       <div class="flex flex-col gap-2">
-        <PrtInputNumber v-model="num" placeholder="type, clear, step" />
+        <PrtInputNumber v-model="ex.basic" placeholder="type, clear, step" />
         <span class="text-xs font-mono text-ink-faint">
-          modelValue: {{ num === null ? 'null' : num }} ({{ num === null ? 'object' : typeof num }})
+          modelValue: {{ ex.basic === null ? 'null' : ex.basic }} ({{ ex.basic === null ? 'object' : typeof ex.basic }})
         </span>
       </div>
     </DemoItem>
@@ -21,49 +21,49 @@
 
   <DemoSection title="Min / max / step — steppers clamp, typing never does" min="19rem">
     <DemoItem label="min 0 · max 10 · step 2">
-      <PrtInputNumber v-model="num" :min="0" :max="10" :step="2" placeholder="0–10" />
+      <PrtInputNumber v-model="ex.mm" :min="0" :max="10" :step="2" placeholder="0–10" />
     </DemoItem>
     <DemoItem label="step 0.5">
-      <PrtInputNumber v-model="num" :step="0.5" placeholder="halves" />
+      <PrtInputNumber v-model="ex.half" :step="0.5" placeholder="halves" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Variants" min="19rem">
     <DemoItem label="filled">
-      <PrtInputNumber v-model="num" placeholder="filled (default)" />
+      <PrtInputNumber v-model="ex.filled" placeholder="filled (default)" />
     </DemoItem>
     <DemoItem label="outline">
-      <PrtInputNumber v-model="num" variant="outline" placeholder="outline" />
+      <PrtInputNumber v-model="ex.outline" variant="outline" placeholder="outline" />
     </DemoItem>
     <DemoItem label="minimal">
-      <PrtInputNumber v-model="num" variant="minimal" placeholder="minimal" />
+      <PrtInputNumber v-model="ex.minimal" variant="minimal" placeholder="minimal" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes" min="19rem">
     <DemoItem label="sm">
-      <PrtInputNumber v-model="num" size="sm" placeholder="small" />
+      <PrtInputNumber v-model="ex.sm" size="sm" placeholder="small" />
     </DemoItem>
     <DemoItem label="base">
-      <PrtInputNumber v-model="num" size="base" placeholder="base" />
+      <PrtInputNumber v-model="ex.base" size="base" placeholder="base" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtInputNumber v-model="num" size="lg" placeholder="large" />
+      <PrtInputNumber v-model="ex.lg" size="lg" placeholder="large" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Edges" min="19rem">
     <DemoItem label="square">
-      <PrtInputNumber v-model="num" edges="square" placeholder="square" />
+      <PrtInputNumber v-model="ex.square" edges="square" placeholder="square" />
     </DemoItem>
     <DemoItem label="rounded (default)">
-      <PrtInputNumber v-model="num" edges="rounded" placeholder="rounded" />
+      <PrtInputNumber v-model="ex.rounded" edges="rounded" placeholder="rounded" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Hide controls" min="19rem">
     <DemoItem label="plain number field — native ArrowUp/Down still works">
-      <PrtInputNumber v-model="num" hide-controls placeholder="no steppers" />
+      <PrtInputNumber v-model="ex.hide" hide-controls placeholder="no steppers" />
     </DemoItem>
   </DemoSection>
 
@@ -81,7 +81,7 @@
       <PrtFormField label="Replicas" helper-text="Empty means auto.">
         <template #default="{ inputProps, error, disabled }">
           <PrtInputNumber
-            v-model="num"
+            v-model="ex.field"
             v-bind="inputProps"
             :error="error"
             :disabled="disabled"
@@ -99,7 +99,7 @@
         <template #default="{ inputProps, error, disabled }">
           <div class="flex items-center gap-2">
             <PrtInputNumber
-              v-model="num"
+              v-model="ex.price"
               v-bind="inputProps"
               :error="error"
               :disabled="disabled"
@@ -122,4 +122,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const num = ref<number | null>(null)
+// each showcase field gets its own key so they step independently
+const ex = ref<Record<string, number | null>>({ basic: null, mm: null, half: null, filled: null, outline: null, minimal: null, sm: null, base: null, lg: null, square: null, rounded: null, hide: null, field: null, price: null })
 </script>

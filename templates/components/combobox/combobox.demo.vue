@@ -62,10 +62,10 @@
   </DemoSection>
 
   <DemoSection title="Typed values — numbers stay numbers" min="19rem">
-    <DemoItem label="id-keyed entities: {{ choice }} is {{ typeof choice }}">
+    <DemoItem label="id-keyed entities: {{ ex.typed }} is {{ typeof ex.typed }}">
       <div class="flex flex-col gap-2">
         <PrtCombobox
-          v-model="choice"
+          v-model="ex.typed"
           placeholder="Customer account…"
           :options="[
             { value: 1042, label: 'Acme Fertigung GmbH' },
@@ -73,7 +73,7 @@
             { value: 1103, label: 'Cardea Health BV' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">emitted: {{ choice }} ({{ typeof choice }})</span>
+        <span class="text-xs font-mono text-ink-faint">emitted: {{ ex.typed }} ({{ typeof ex.typed }})</span>
       </div>
     </DemoItem>
   </DemoSection>
@@ -81,7 +81,7 @@
   <DemoSection title="Option icons" min="19rem">
     <DemoItem label="icon per option, panel and all">
       <PrtCombobox
-        v-model="choice"
+        v-model="ex.icons"
         placeholder="Jump to…"
         :options="[
           { value: 'deploys', label: 'Deployments', icon: 'i-lucide-rocket' },
@@ -96,7 +96,7 @@
   <DemoSection title="Clearable" min="19rem">
     <DemoItem label="the × resets to null and keeps focus">
       <PrtCombobox
-        v-model="choice"
+        v-model="ex.clearable"
         clearable
         placeholder="Billing country…"
         :options="[
@@ -112,7 +112,7 @@
   <DemoSection title="Large set — capped at maxVisible, tail invites typing" min="19rem">
     <DemoItem label="1000 rows, default cap 100 — no virtualization, recorded decision">
       <PrtCombobox
-        v-model="choice"
+        v-model="ex.large"
         placeholder="Find a SKU…"
         :options="Array.from({ length: 1000 }, (_, i) => ({
           value: 'SKU-' + String(i + 1).padStart(4, '0'),
@@ -124,33 +124,33 @@
 
   <DemoSection title="Sizes" min="19rem">
     <DemoItem label="sm">
-      <PrtCombobox v-model="choice" size="sm" placeholder="small"
+      <PrtCombobox v-model="ex.sm" size="sm" placeholder="small"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtCombobox v-model="choice" size="lg" placeholder="large"
+      <PrtCombobox v-model="ex.lg" size="lg" placeholder="large"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Variants + edges" min="19rem">
     <DemoItem label="outline">
-      <PrtCombobox v-model="choice" variant="outline" placeholder="outline"
+      <PrtCombobox v-model="ex.outline" variant="outline" placeholder="outline"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="minimal">
-      <PrtCombobox v-model="choice" variant="minimal" placeholder="minimal"
+      <PrtCombobox v-model="ex.minimal" variant="minimal" placeholder="minimal"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="square">
-      <PrtCombobox v-model="choice" edges="square" placeholder="square"
+      <PrtCombobox v-model="ex.square" edges="square" placeholder="square"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="States" min="19rem">
     <DemoItem label="error">
-      <PrtCombobox v-model="choice" error placeholder="unknown assignee"
+      <PrtCombobox v-model="ex.err" error placeholder="unknown assignee"
         :options="[{ value: 'a', label: 'Alpha' }]" />
     </DemoItem>
     <DemoItem label="disabled">
@@ -158,7 +158,7 @@
         :options="[{ value: 'a', label: 'Alpha' }]" />
     </DemoItem>
     <DemoItem label="disabled option">
-      <PrtCombobox v-model="choice" placeholder="Pick a plan…"
+      <PrtCombobox v-model="ex.soldout" placeholder="Pick a plan…"
         :options="[
           { value: 'starter', label: 'Starter' },
           { value: 'scale', label: 'Scale (contact sales)', disabled: true },
@@ -171,7 +171,7 @@
       <PrtFormField label="Assignee" helper-text="Who owns the incident.">
         <template #default="{ inputProps, error, disabled }">
           <PrtCombobox
-            v-model="choice"
+            v-model="ex.field"
             v-bind="inputProps"
             :error="error"
             :disabled="disabled"
@@ -225,4 +225,6 @@ function onPkgQuery(q: string) {
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const value = ref('')
 const choice = ref<string | number>('')
+// each showcase combobox gets its own key so they select independently
+const ex = ref<Record<string, string | number>>({ typed: '', icons: '', clearable: '', large: '', sm: '', lg: '', outline: '', minimal: '', square: '', err: '', soldout: '', field: '' })
 </script>

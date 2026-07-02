@@ -10,7 +10,7 @@
 
   <DemoSection title="Basic" min="12rem">
     <DemoItem label="off → click me">
-      <PrtToggle v-model="checked" label="Auto-deploy" />
+      <PrtToggle v-model="flags.basic" label="Auto-deploy" />
     </DemoItem>
     <DemoItem label="on (static)">
       <PrtToggle :model-value="true" label="On" />
@@ -30,13 +30,13 @@
 
   <DemoSection title="Sizes" min="12rem">
     <DemoItem label="sm">
-      <PrtToggle v-model="checked" size="sm" label="small" />
+      <PrtToggle v-model="flags.sm" size="sm" label="small" />
     </DemoItem>
     <DemoItem label="base">
-      <PrtToggle v-model="checked" size="base" label="base" />
+      <PrtToggle v-model="flags.base" size="base" label="base" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtToggle v-model="checked" size="lg" label="large" />
+      <PrtToggle v-model="flags.lg" size="lg" label="large" />
     </DemoItem>
   </DemoSection>
 
@@ -51,7 +51,7 @@
 
   <DemoSection title="Label via slot" min="16rem">
     <DemoItem label="default slot overrides the label prop">
-      <PrtToggle v-model="checked">
+      <PrtToggle v-model="flags.slot">
         Maintenance mode <span class="text-ink-faint">(applies immediately)</span>
       </PrtToggle>
     </DemoItem>
@@ -62,7 +62,7 @@
       <PrtFormField label="Visibility" helper-text="Public projects appear in search.">
         <template #default="{ inputProps, disabled }">
           <PrtToggle
-            v-model="checked"
+            v-model="flags.field"
             v-bind="inputProps"
             :disabled="disabled"
             label="Public project"
@@ -80,4 +80,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const checked = ref(false)
+// each showcase toggle gets its own flag so they flip independently
+const flags = ref({ basic: false, sm: true, base: true, lg: true, slot: false, field: true })
 </script>

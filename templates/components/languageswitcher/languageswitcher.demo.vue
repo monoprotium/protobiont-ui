@@ -16,7 +16,7 @@
     </DemoItem>
     <DemoItem label='without the globe (show-globe="false")'>
       <PrtLanguageSwitcher
-        v-model="locale"
+        v-model="ex.noglobe"
         :show-globe="false"
         :options="[
           { code: 'en', label: 'English' },
@@ -32,7 +32,7 @@
     <DemoItem label='presentation="segmented"'>
       <div class="flex flex-col items-start gap-2">
         <PrtLanguageSwitcher
-          v-model="locale"
+          v-model="ex.seg"
           presentation="segmented"
           :options="[
             { code: 'en', label: 'English' },
@@ -41,7 +41,7 @@
             { code: 'de', label: 'Deutsch' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">locale = {{ locale }}</span>
+        <span class="text-xs font-mono text-ink-faint">locale = {{ ex.seg }}</span>
       </div>
     </DemoItem>
   </DemoSection>
@@ -49,7 +49,7 @@
   <DemoSection title="Buttons — a small row (2 languages)" min="20rem">
     <DemoItem label='presentation="buttons"'>
       <PrtLanguageSwitcher
-        v-model="locale"
+        v-model="ex.btn"
         presentation="buttons"
         :options="[
           { code: 'en', label: 'English' },
@@ -63,7 +63,7 @@
     <DemoItem label="flag = a ready-made Iconify class (i-circle-flags-*) per option — menu">
       <div class="flex flex-col items-start gap-2">
         <PrtLanguageSwitcher
-          v-model="locale"
+          v-model="ex.flagMenu"
           :options="[
             { code: 'en', label: 'English', flag: 'i-circle-flags-gb' },
             { code: 'es', label: 'Español', flag: 'i-circle-flags-es' },
@@ -72,12 +72,12 @@
             { code: 'fr', label: 'Français', flag: 'i-circle-flags-fr' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">locale = {{ locale }}</span>
+        <span class="text-xs font-mono text-ink-faint">locale = {{ ex.flagMenu }}</span>
       </div>
     </DemoItem>
     <DemoItem label="same flags, segmented — they ride the existing icon slot">
       <PrtLanguageSwitcher
-        v-model="locale"
+        v-model="ex.flagSeg"
         presentation="segmented"
         :options="[
           { code: 'en', label: 'English', flag: 'i-circle-flags-gb' },
@@ -88,7 +88,7 @@
     </DemoItem>
     <DemoItem label="icon-only — FLAG ONLY, no text (endonym stays the accessible name) — menu">
       <PrtLanguageSwitcher
-        v-model="locale"
+        v-model="ex.iconMenu"
         icon-only
         :options="[
           { code: 'en', label: 'English', flag: 'i-circle-flags-gb' },
@@ -102,7 +102,7 @@
     <DemoItem label="icon-only flags — segmented and buttons (a pure flag row)">
       <div class="flex flex-col items-start gap-3">
         <PrtLanguageSwitcher
-          v-model="locale"
+          v-model="ex.iconSeg"
           presentation="segmented"
           icon-only
           :options="[
@@ -112,7 +112,7 @@
           ]"
         />
         <PrtLanguageSwitcher
-          v-model="locale"
+          v-model="ex.iconBtn"
           presentation="buttons"
           icon-only
           :options="[
@@ -132,4 +132,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const locale = ref('en')
+// each showcase switcher gets its own locale so they pick independently
+const ex = ref<Record<string, string>>({ noglobe: 'en', seg: 'en', btn: 'en', flagMenu: 'en', flagSeg: 'en', iconMenu: 'en', iconSeg: 'en', iconBtn: 'en' })
 </script>

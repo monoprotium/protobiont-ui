@@ -29,10 +29,7 @@
         />
       </div>
     </DemoItem>
-  </DemoSection>
-
-  <DemoSection title="Last action" min="20rem">
-    <DemoItem label="the emit carries the action id">
+    <DemoItem label="last action — pick an item from a speed-dial above (the @action emit carries the id)">
       <span class="text-sm font-mono text-ink-muted">last action: {{ value || '—' }}</span>
     </DemoItem>
   </DemoSection>

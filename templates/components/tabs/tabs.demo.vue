@@ -18,7 +18,7 @@
   <DemoSection title="Panels via slots" min="24rem">
     <DemoItem label="#panel-{value} renders under the row">
       <PrtTabs
-        v-model="tab"
+        v-model="tabState.panels"
         :items="[
           { value: 'overview', label: 'Overview' },
           { value: 'activity', label: 'Activity' },
@@ -38,7 +38,7 @@
     <DemoItem label="a contained tabs panel; shared min-h keeps the surface steady">
       <div class="border border-edge bg-surface-1">
         <PrtTabs
-          v-model="tab"
+          v-model="tabState.widget"
           class="px-4 pt-1"
           :items="[
             { value: 'overview', label: 'Overview', icon: 'i-lucide-layout-dashboard' },
@@ -99,7 +99,7 @@
   <DemoSection title="Icons + disabled item" min="24rem">
     <DemoItem label="icon class strings; Billing is locked">
       <PrtTabs
-        v-model="tab"
+        v-model="tabState.icons"
         :items="[
           { value: 'overview', label: 'Overview', icon: 'i-lucide-layout-dashboard' },
           { value: 'members', label: 'Members', icon: 'i-lucide-users' },
@@ -112,7 +112,7 @@
   <DemoSection title="Sizes" min="24rem">
     <DemoItem label="sm">
       <PrtTabs
-        v-model="tab"
+        v-model="tabState.sm"
         size="sm"
         :items="[
           { value: 'overview', label: 'Overview' },
@@ -122,7 +122,7 @@
     </DemoItem>
     <DemoItem label="lg">
       <PrtTabs
-        v-model="tab"
+        v-model="tabState.lg"
         size="lg"
         :items="[
           { value: 'overview', label: 'Overview' },
@@ -136,7 +136,7 @@
     <DemoItem label="the row is the whole component; routing is yours">
       <div class="flex flex-col gap-3">
         <PrtTabs
-          v-model="tab"
+          v-model="tabState.nav"
           :items="[
             { value: 'overview', label: 'Overview' },
             { value: 'activity', label: 'Activity' },
@@ -144,8 +144,8 @@
           ]"
         />
         <div class="text-sm text-ink-muted">
-          <span v-if="tab === 'overview'">Overview pane (your router-view).</span>
-          <span v-else-if="tab === 'activity'">Activity pane.</span>
+          <span v-if="tabState.nav === 'overview'">Overview pane (your router-view).</span>
+          <span v-else-if="tabState.nav === 'activity'">Activity pane.</span>
           <span v-else>Settings pane.</span>
         </div>
       </div>
@@ -161,4 +161,13 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const value = ref('')
 const tab = ref<string | number>('overview')
+// each showcase tab set gets its own key so they switch independently
+const tabState = ref<Record<string, string | number>>({
+  panels: 'overview',
+  widget: 'overview',
+  icons: 'overview',
+  sm: 'overview',
+  lg: 'overview',
+  nav: 'overview',
+})
 </script>

@@ -24,7 +24,7 @@
     <DemoItem label="full anatomy">
       <PrtCard>
         <template #image>
-          <div class="h-28 bg-surface-2 flex items-center justify-center">
+          <div class="aspect-[16/9] bg-surface-2 flex items-center justify-center">
             <span class="i-lucide-image text-ink-faint text-2xl" />
           </div>
         </template>

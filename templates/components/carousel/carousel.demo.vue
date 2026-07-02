@@ -60,18 +60,22 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="Dots — square house mark (default) vs circle (mindless prop)" min="26rem">
+  <DemoSection title="Dots — square house mark (default) vs circle" min="20rem">
     <DemoItem label='dotShape="square" (default)'>
-      <PrtCarousel seed="7">
-        <PrtLazyImg src="/geo-1.svg" alt="Pulse-8 synth" aspect="4/3" rounded="none" />
-        <PrtLazyImg src="/geo-3.svg" alt="Drum machine" aspect="4/3" rounded="none" />
-      </PrtCarousel>
+      <div class="max-w-sm">
+        <PrtCarousel seed="7">
+          <PrtLazyImg src="/geo-1.svg" alt="Pulse-8 synth" aspect="16/9" rounded="none" />
+          <PrtLazyImg src="/geo-3.svg" alt="Drum machine" aspect="16/9" rounded="none" />
+        </PrtCarousel>
+      </div>
     </DemoItem>
     <DemoItem label='dotShape="circle"'>
-      <PrtCarousel seed="7" dot-shape="circle">
-        <PrtLazyImg src="/geo-2.svg" alt="DanteBridge" aspect="4/3" rounded="none" />
-        <PrtLazyImg src="/geo-4.svg" alt="Delay pedal" aspect="4/3" rounded="none" />
-      </PrtCarousel>
+      <div class="max-w-sm">
+        <PrtCarousel seed="7" dot-shape="circle">
+          <PrtLazyImg src="/geo-2.svg" alt="DanteBridge" aspect="16/9" rounded="none" />
+          <PrtLazyImg src="/geo-4.svg" alt="Delay pedal" aspect="16/9" rounded="none" />
+        </PrtCarousel>
+      </div>
     </DemoItem>
   </DemoSection>
 

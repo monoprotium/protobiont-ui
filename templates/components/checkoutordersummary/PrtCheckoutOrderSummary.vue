@@ -26,7 +26,7 @@
         <!-- a square thumbnail WELL on a contrasting surface (surface-3 ≠ the
              surface-2 panel) so the image — or the empty-image placeholder —
              reads as a distinct slot instead of blending into the panel. -->
-        <div class="size-12 shrink-0 grid place-items-center overflow-hidden rounded-control bg-surface-3">
+        <div class="size-14 shrink-0 grid place-items-center overflow-hidden rounded-control bg-surface-3">
           <PrtLazyImg
             v-if="item.imageUrl"
             :src="item.imageUrl"

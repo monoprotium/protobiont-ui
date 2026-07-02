@@ -9,7 +9,7 @@
 
   <DemoSection title="Edge fade — a soft gradient at the clamp line while collapsed" min="24rem">
     <DemoItem label="fade + two lines">
-      <PrtExcerpt v-model:expanded="expanded" :lines="2" fade>
+      <PrtExcerpt v-model:expanded="ex.fade" :lines="2" fade>
         The Pulse-8 pairs a pair of analog oscillators with a state-variable filter and a per-voice envelope that tracks velocity. Patches are stored as plain text, so you can diff them, version them, and hand-edit a cutoff value without opening the editor. The arpeggiator syncs to MIDI clock and survives tempo changes mid-pattern.
       </PrtExcerpt>
     </DemoItem>
@@ -30,6 +30,7 @@ import DemoItem from '@demo/DemoItem.vue'
 import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
-const value = ref('')
 const expanded = ref(false)
+// the second excerpt owns its own expanded flag so it doesn't mirror the first
+const ex = ref<Record<string, boolean>>({ fade: false })
 </script>

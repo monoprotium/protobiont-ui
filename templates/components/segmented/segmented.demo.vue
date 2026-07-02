@@ -36,7 +36,7 @@
       <div class="flex flex-col items-start gap-2">
         <PrtSegmented
           type="multiple"
-          v-model="filters"
+          v-model="ex.fx"
           seed="9"
           :options="[
             { value: 'reverb', label: 'Reverb' },
@@ -45,14 +45,14 @@
             { value: 'chorus', label: 'Chorus' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">v-model = [{{ filters.join(', ') }}]</span>
+        <span class="text-xs font-mono text-ink-faint">v-model = [{{ ex.fx.join(', ') }}]</span>
       </div>
     </DemoItem>
     <DemoItem label="icon-only formatting toolbar (multiple)">
       <div class="flex flex-col items-start gap-2">
         <PrtSegmented
           type="multiple"
-          v-model="filters"
+          v-model="ex.format"
           seed="7"
           :options="[
             { value: 'bold', label: 'Bold', icon: 'i-lucide-bold' },
@@ -60,20 +60,20 @@
             { value: 'underline', label: 'Underline', icon: 'i-lucide-underline' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">v-model = [{{ filters.join(', ') }}]</span>
+        <span class="text-xs font-mono text-ink-faint">v-model = [{{ ex.format.join(', ') }}]</span>
       </div>
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes — sm / base / lg" min="20rem">
     <DemoItem label='size="sm"'>
-      <PrtSegmented size="sm" v-model="choice" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
+      <PrtSegmented size="sm" v-model="ex.sizesSm" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
     </DemoItem>
     <DemoItem label='size="base"'>
-      <PrtSegmented size="base" v-model="choice" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
+      <PrtSegmented size="base" v-model="ex.sizesBase" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
     </DemoItem>
     <DemoItem label='size="lg"'>
-      <PrtSegmented size="lg" v-model="choice" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
+      <PrtSegmented size="lg" v-model="ex.sizesLg" seed="7" :options="[{ value: 'a', label: 'One' }, { value: 'b', label: 'Two' }, { value: 'c', label: 'Three' }]" />
     </DemoItem>
   </DemoSection>
 
@@ -81,7 +81,7 @@
     <DemoItem label="single select with icons — pick a device, value updates">
       <div class="flex flex-col items-start gap-2">
         <PrtSegmented
-          v-model="choice"
+          v-model="ex.device"
           seed="7"
           :options="[
             { value: 'pc', label: 'PC', icon: 'i-lucide-monitor' },
@@ -90,7 +90,7 @@
             { value: 'phone', label: 'Phone', icon: 'i-lucide-smartphone' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">v-model = {{ choice || '—' }}</span>
+        <span class="text-xs font-mono text-ink-faint">v-model = {{ ex.device || '—' }}</span>
       </div>
     </DemoItem>
   </DemoSection>
@@ -104,5 +104,6 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const choice = ref<string | number>('')
 const view = ref<'grid' | 'list'>('grid')
-const filters = ref<string[]>([])
+// each showcase segmented gets its own key so they select independently
+const ex = ref<Record<string, string | number | string[]>>({ fx: [], format: [], sizesSm: '', sizesBase: '', sizesLg: '', device: '' })
 </script>

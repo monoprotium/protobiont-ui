@@ -9,7 +9,7 @@
     </DemoItem>
     <DemoItem label="helper text">
       <PrtFormField
-        v-model="value"
+        v-model="ex.name"
         label="Project name"
         placeholder="my-project"
         helper-text="Lowercase, no spaces."
@@ -17,7 +17,7 @@
     </DemoItem>
     <DemoItem label="required + description">
       <PrtFormField
-        v-model="value"
+        v-model="ex.email"
         label="Email"
         type="email"
         required
@@ -124,6 +124,6 @@ const form = useForm({
   },
 })
 
-// bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
-const value = ref('')
+// the two Shape-A demo fields each get their own key so they type independently
+const ex = ref<Record<string, string>>({ name: '', email: '' })
 </script>

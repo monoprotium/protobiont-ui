@@ -10,25 +10,25 @@
 
   <DemoSection title="Variants" min="16rem">
     <DemoItem label="filled">
-      <PrtInput v-model="value" placeholder="filled (default)" />
+      <PrtInput v-model="ex.filled" placeholder="filled (default)" />
     </DemoItem>
     <DemoItem label="outline">
-      <PrtInput v-model="value" variant="outline" placeholder="outline" />
+      <PrtInput v-model="ex.outline" variant="outline" placeholder="outline" />
     </DemoItem>
     <DemoItem label="minimal">
-      <PrtInput v-model="value" variant="minimal" placeholder="minimal" />
+      <PrtInput v-model="ex.minimal" variant="minimal" placeholder="minimal" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes" min="16rem">
     <DemoItem label="sm">
-      <PrtInput v-model="value" size="sm" placeholder="small" />
+      <PrtInput v-model="ex.sm" size="sm" placeholder="small" />
     </DemoItem>
     <DemoItem label="base">
-      <PrtInput v-model="value" size="base" placeholder="base" />
+      <PrtInput v-model="ex.base" size="base" placeholder="base" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtInput v-model="value" size="lg" placeholder="large" />
+      <PrtInput v-model="ex.lg" size="lg" placeholder="large" />
     </DemoItem>
   </DemoSection>
 
@@ -43,13 +43,13 @@
 
   <DemoSection title="Edges" min="16rem">
     <DemoItem label="square">
-      <PrtInput v-model="value" edges="square" placeholder="square" />
+      <PrtInput v-model="ex.square" edges="square" placeholder="square" />
     </DemoItem>
     <DemoItem label="rounded (default)">
-      <PrtInput v-model="value" edges="rounded" placeholder="rounded" />
+      <PrtInput v-model="ex.rounded" edges="rounded" placeholder="rounded" />
     </DemoItem>
     <DemoItem label="pill">
-      <PrtInput v-model="value" edges="pill" placeholder="search…" />
+      <PrtInput v-model="ex.pill" edges="pill" placeholder="search…" />
     </DemoItem>
   </DemoSection>
 </template>
@@ -61,4 +61,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const value = ref('')
+// each showcase input gets its own key so they type independently
+const ex = ref<Record<string, string>>({ filled: '', outline: '', minimal: '', sm: '', base: '', lg: '', square: '', rounded: '', pill: '' })
 </script>

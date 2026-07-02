@@ -26,7 +26,7 @@
     <DemoItem label="step content + nav are YOURS — v-if on the same index; a form layer gates Next in a real app">
       <div class="flex flex-col gap-5">
         <PrtSteps
-          v-model="count"
+          v-model="ex.wizard"
           :steps="[
             { label: 'Account', description: 'Email + password' },
             { label: 'Payment', description: 'Card details' },
@@ -35,7 +35,7 @@
         />
         <!-- shared min-h: panes differ in natural height — without it the
              nav row jumps every step -->
-        <div v-if="count === 0" class="min-h-36 border border-edge bg-surface-1 p-4">
+        <div v-if="ex.wizard === 0" class="min-h-36 border border-edge bg-surface-1 p-4">
           <PrtFormField
             v-model="value"
             label="Email"
@@ -45,7 +45,7 @@
             helper-text="Used for the order confirmation."
           />
         </div>
-        <div v-else-if="count === 1" class="min-h-36 border border-edge bg-surface-1 p-4">
+        <div v-else-if="ex.wizard === 1" class="min-h-36 border border-edge bg-surface-1 p-4">
           <PrtFormField
             v-model="choice"
             label="Card number"
@@ -59,11 +59,11 @@
           <div class="mt-2 border-t border-edge pt-2 flex justify-between text-ink"><span>Total</span><span class="tabular-nums">$104.99</span></div>
         </div>
         <div class="flex justify-between">
-          <PrtBtn variant="outline" size="sm" :disabled="count === 0" @click="count--">
+          <PrtBtn variant="outline" size="sm" :disabled="ex.wizard === 0" @click="ex.wizard--">
             Previous
           </PrtBtn>
-          <PrtBtn size="sm" @click="count === 2 ? (count = 0) : count++">
-            {{ count === 2 ? 'Submit' : 'Next' }}
+          <PrtBtn size="sm" @click="ex.wizard === 2 ? (ex.wizard = 0) : ex.wizard++">
+            {{ ex.wizard === 2 ? 'Submit' : 'Next' }}
           </PrtBtn>
         </div>
       </div>
@@ -88,7 +88,7 @@
   <DemoSection title="Without labels / layout" min="26rem">
     <DemoItem label=':show-labels="false" — dots only; labels become title + aria-label'>
       <PrtSteps
-        v-model="count"
+        v-model="ex.dots"
         :show-labels="false"
         :steps="[
           { label: 'Account' },
@@ -142,24 +142,6 @@ const value = ref('')
 const choice = ref<string | number>('')
 const count = ref(0)
 const page = ref(1)
-const nav = [
-  { label: 'Workspace', items: [
-    { value: 'overview', label: 'Overview', icon: 'i-lucide-layout-dashboard' },
-    { value: 'projects', label: 'Projects', icon: 'i-lucide-folder-kanban', badge: '12' },
-    { value: 'analytics', label: 'Analytics', icon: 'i-lucide-chart-line' },
-  ] },
-  { label: 'Build', items: [
-    { value: 'pipelines', label: 'Pipelines', icon: 'i-lucide-git-branch', children: [
-      { value: 'runs', label: 'Runs' },
-      { value: 'schedules', label: 'Schedules' },
-      { value: 'caches', label: 'Caches' },
-    ] },
-    { value: 'artifacts', label: 'Artifacts', icon: 'i-lucide-package' },
-    { value: 'registry', label: 'Registry', icon: 'i-lucide-container' },
-  ] },
-  { label: 'Account', items: [
-    { value: 'settings', label: 'Settings', icon: 'i-lucide-settings' },
-    { value: 'billing', label: 'Billing', icon: 'i-lucide-credit-card' },
-  ] },
-]
+// each interactive steps demo gets its own index so they advance independently
+const ex = ref<Record<string, number>>({ wizard: 0, dots: 0 })
 </script>

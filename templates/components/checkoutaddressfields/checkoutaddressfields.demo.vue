@@ -8,17 +8,19 @@
     </DemoItem>
   </DemoSection>
 
-  <DemoSection title="With a region combobox (country provided)" min="26rem">
-    <DemoItem label="regionOptions swaps the State field for a searchable combobox">
+  <DemoSection title="With a country combobox" min="26rem">
+    <DemoItem label="countryOptions swaps the Country field for a searchable combobox; State / Province stays free text">
       <div class="max-w-md">
         <PrtCheckoutAddressFields
           v-model="address"
           mode="shipping"
-          :region-options="[
-            { value: 'CA', label: 'California' },
-            { value: 'NY', label: 'New York' },
-            { value: 'TX', label: 'Texas' },
-            { value: 'WA', label: 'Washington' },
+          :country-options="[
+            { value: 'DE', label: 'Germany' },
+            { value: 'FR', label: 'France' },
+            { value: 'ES', label: 'Spain' },
+            { value: 'IT', label: 'Italy' },
+            { value: 'NL', label: 'Netherlands' },
+            { value: 'PL', label: 'Poland' },
           ]"
         />
       </div>

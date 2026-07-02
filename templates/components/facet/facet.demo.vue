@@ -55,17 +55,17 @@
   <DemoSection title="Stacked — the rail rhythm" min="19rem">
     <DemoItem label="facets stack with consistent spacing; see /c/listing for the wired rail">
       <div class="flex w-56 flex-col gap-5">
-        <PrtFacet label="Category" :count="filters.length" @clear="filters = []">
+        <PrtFacet label="Category" :count="ex.cat.length" @clear="ex.cat = []">
           <PrtFilterBar
-            v-model="filters"
+            v-model="ex.cat"
             :items="[
               { value: 'synths', label: 'Synths', count: 12 },
-              { value: 'pedals', label: 'Pedals', count: 23 }
+              { value: 'turntables', label: 'Turntables', count: 23 }
             ]"
           />
         </PrtFacet>
-        <PrtFacet label="Availability" :count="checked ? 1 : 0" @clear="checked = false">
-          <PrtToggle v-model="checked" label="In stock only" size="sm" />
+        <PrtFacet label="Availability" :count="ex.avail ? 1 : 0" @clear="ex.avail = false">
+          <PrtToggle v-model="ex.avail" label="In stock only" size="sm" />
         </PrtFacet>
       </div>
     </DemoItem>
@@ -82,4 +82,6 @@ const checked = ref(false)
 const choice = ref<string | number>('')
 const range = ref<[number, number]>([120, 480])
 const filters = ref<string[]>([])
+// the stacked-rail facets own their own state so they don't mirror the ones above
+const ex = ref<{ cat: string[]; avail: boolean }>({ cat: [], avail: false })
 </script>

@@ -13,7 +13,7 @@
 
   <DemoSection title="Custom trigger slot" min="24rem">
     <DemoItem label="#trigger gets { open } — compose your own row content">
-      <PrtCollapsible v-model="open">
+      <PrtCollapsible v-model="ex.custom">
         <template #trigger="{ open: isOpen }">
           <span class="inline-flex items-center gap-2">
             <span class="i-lucide-folder text-ink-faint" aria-hidden="true" />
@@ -32,14 +32,14 @@
     </DemoItem>
     <DemoItem label="radius belongs to the GROUP — wrapper clips, filled bars stay square">
       <div class="rounded-surface overflow-hidden bg-surface-1">
-        <PrtCollapsible v-model="open" variant="filled" label="What is a seed?">
+        <PrtCollapsible v-model="ex.filled1" variant="filled" label="What is a seed?">
           A pad from the rack — decorative color as a deliberate pluck.
         </PrtCollapsible>
-        <PrtCollapsible v-model="show" variant="filled" label="Why square rows?">
+        <PrtCollapsible v-model="ex.filled2" variant="filled" label="Why square rows?">
           A full-width bar over a hairline is a square shape; rounding
           every bar is the bug.
         </PrtCollapsible>
-        <PrtCollapsible v-model="expanded" variant="filled" label="Where does radius live?">
+        <PrtCollapsible v-model="ex.filled3" variant="filled" label="Where does radius live?">
           On this wrapper: rounded-surface + overflow-hidden. Only the top
           corners of the first row and the bottom corners of the last row
           get clipped — inner rows never round.
@@ -47,7 +47,7 @@
       </div>
     </DemoItem>
     <DemoItem label="sizes — sm">
-      <PrtCollapsible v-model="open" size="sm" label="Compact row">
+      <PrtCollapsible v-model="ex.sizeSm" size="sm" label="Compact row">
         Dense-list scale.
       </PrtCollapsible>
     </DemoItem>
@@ -84,20 +84,20 @@
   <DemoSection title="Accordion — multiple open" min="24rem">
     <DemoItem label="independent v-models = multi-open; no exclusivity state at all">
       <div class="flex flex-col">
-        <PrtCollapsible v-model="open" label="Routing">
+        <PrtCollapsible v-model="ex.multi1" label="Routing">
           Master bus, two sends, sidechain off.
         </PrtCollapsible>
-        <PrtCollapsible v-model="show" label="Effects">
+        <PrtCollapsible v-model="ex.multi2" label="Effects">
           Tape saturation into a short plate.
         </PrtCollapsible>
-        <PrtCollapsible v-model="expanded" label="Automation">
+        <PrtCollapsible v-model="ex.multi3" label="Automation">
           Filter cutoff rides the second chorus.
         </PrtCollapsible>
       </div>
     </DemoItem>
     <DemoItem label="colored bars — seed marks via the trigger slot">
       <div class="flex flex-col">
-        <PrtCollapsible v-model="open">
+        <PrtCollapsible v-model="ex.col1">
           <template #trigger>
             <span class="inline-flex items-center gap-2">
               <span data-seed="4" class="h-3.5 w-1 rounded-mark bg-[var(--seed,var(--surface-3))]" aria-hidden="true" />
@@ -106,7 +106,7 @@
           </template>
           Kick, snare, two overheads. 92 bpm.
         </PrtCollapsible>
-        <PrtCollapsible v-model="show">
+        <PrtCollapsible v-model="ex.col2">
           <template #trigger>
             <span class="inline-flex items-center gap-2">
               <span data-seed="7" class="h-3.5 w-1 rounded-mark bg-[var(--seed,var(--surface-3))]" aria-hidden="true" />
@@ -115,7 +115,7 @@
           </template>
           DI + amp blend, mono below 120 Hz.
         </PrtCollapsible>
-        <PrtCollapsible v-model="expanded">
+        <PrtCollapsible v-model="ex.col3">
           <template #trigger>
             <span class="inline-flex items-center gap-2">
               <span data-seed="2" class="h-3.5 w-1 rounded-mark bg-[var(--seed,var(--surface-3))]" aria-hidden="true" />
@@ -137,7 +137,6 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const choice = ref<string | number>('')
 const open = ref(true)
-const show = ref(false)
-const expanded = ref(false)
-const files = ref<any[]>([])
+// each collapsible demo gets its own open state so sections toggle independently
+const ex = ref<Record<string, boolean>>({ custom: false, filled1: true, filled2: false, filled3: false, sizeSm: true, multi1: true, multi2: false, multi3: false, col1: true, col2: false, col3: false })
 </script>

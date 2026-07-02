@@ -53,7 +53,7 @@
         style="--prt-appshell-h: 26rem"
       >
         <template #sidebar>
-          <PrtSidebar v-model="collapsed" :items="nav" :active="current" @select="current = $event" />
+          <PrtSidebar v-model="ex.collapsed" :items="nav" :active="ex.current" @select="ex.current = $event" />
         </template>
 
         <section class="p-6 text-sm text-ink-muted">
@@ -63,7 +63,7 @@
         <template #aside>
           <div class="w-64 h-full p-4 border-l border-edge">
             <h2 class="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-ink-faint">Details</h2>
-            <p class="mt-2 text-sm text-ink-muted">Inspector content for <span class="font-mono text-ink">{{ current }}</span>.</p>
+            <p class="mt-2 text-sm text-ink-muted">Inspector content for <span class="font-mono text-ink">{{ ex.current }}</span>.</p>
           </div>
         </template>
       </PrtAppShell>
@@ -96,6 +96,8 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const collapsed = ref(false)
 const current = ref<string | number>('projects')
+// the "with aside" frame owns its own state so it doesn't mirror the first frame
+const ex = ref<{ collapsed: boolean; current: string | number }>({ collapsed: false, current: 'projects' })
 const nav = [
   { label: 'Workspace', items: [
     { value: 'overview', label: 'Overview', icon: 'i-lucide-layout-dashboard' },

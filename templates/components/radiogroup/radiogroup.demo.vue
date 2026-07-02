@@ -18,7 +18,7 @@
   <DemoSection title="Basic" min="19rem">
     <DemoItem label="column (default)">
       <PrtRadioGroup
-        v-model="choice"
+        v-model="picks.basic"
         :options="[
           { value: 'hobby', label: 'Hobby' },
           { value: 'pro', label: 'Pro' },
@@ -31,7 +31,7 @@
   <DemoSection title="With legend" min="19rem">
     <DemoItem label="label renders as the fieldset legend">
       <PrtRadioGroup
-        v-model="choice"
+        v-model="picks.legend"
         label="Plan"
         :options="[
           { value: 'hobby', label: 'Hobby' },
@@ -44,14 +44,14 @@
   <DemoSection title="Seeds — checked dot re-tints via the fieldset cascade" min="19rem">
     <DemoItem label='seed="5"'>
       <PrtRadioGroup
-        :model-value="'b'"
+        v-model="picks.seed5"
         seed="5"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]"
       />
     </DemoItem>
     <DemoItem label='seed="9"'>
       <PrtRadioGroup
-        :model-value="'a'"
+        v-model="picks.seed9"
         seed="9"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]"
       />
@@ -61,7 +61,7 @@
   <DemoSection title="Inline" min="19rem">
     <DemoItem label="options in a row">
       <PrtRadioGroup
-        v-model="choice"
+        v-model="picks.inline"
         inline
         :options="[
           { value: 's', label: 'Small' },
@@ -74,11 +74,11 @@
 
   <DemoSection title="Sizes" min="19rem">
     <DemoItem label="sm">
-      <PrtRadioGroup v-model="choice" size="sm" inline
+      <PrtRadioGroup v-model="picks.sm" size="sm" inline
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtRadioGroup v-model="choice" size="lg" inline
+      <PrtRadioGroup v-model="picks.lg" size="lg" inline
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
@@ -89,7 +89,7 @@
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="disabled option">
-      <PrtRadioGroup v-model="choice" label="Beta is sold out"
+      <PrtRadioGroup v-model="picks.soldOut" label="Beta is sold out"
         :options="[
           { value: 'a', label: 'Alpha' },
           { value: 'b', label: 'Beta', disabled: true },
@@ -97,7 +97,7 @@
         ]" />
     </DemoItem>
     <DemoItem label="error">
-      <PrtRadioGroup v-model="choice" error label="Pick one"
+      <PrtRadioGroup v-model="picks.error" error label="Pick one"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
@@ -128,7 +128,7 @@
     </DemoItem>
     <DemoItem label='seed-tinted card (seed="7")'>
       <PrtRadioGroup
-        v-model="method"
+        v-model="picks.cardSeed"
         variant="card"
         seed="7"
         :options="[
@@ -144,7 +144,7 @@
       <PrtFormField error error-message="Choose a plan to continue.">
         <template #default="{ inputProps, error }">
           <PrtRadioGroup
-            v-model="choice"
+            v-model="picks.field"
             v-bind="inputProps"
             :error="error"
             label="Plan"
@@ -168,4 +168,18 @@ import DemoSection from '@demo/DemoSection.vue'
 const value = ref('')
 const choice = ref<string | number>('')
 const method = ref('standard')
+// each showcase group gets its own key so they select independently
+const picks = ref({
+  basic: 'pro',
+  legend: 'pro',
+  inline: 'm',
+  sm: 'a',
+  lg: 'b',
+  soldOut: 'a',
+  error: 'a',
+  cardSeed: 'express',
+  field: 'hobby',
+  seed5: 'b',
+  seed9: 'a',
+})
 </script>

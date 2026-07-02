@@ -19,7 +19,7 @@
   <DemoSection title="Basic" min="19rem">
     <DemoItem label="with placeholder (null until picked)">
       <PrtSelect
-        v-model="choice"
+        v-model="ex.basic"
         placeholder="Pick a region…"
         :options="[
           { value: 'eu', label: 'Europe' },
@@ -32,37 +32,37 @@
 
   <DemoSection title="Variants" min="19rem">
     <DemoItem label="filled">
-      <PrtSelect v-model="choice" placeholder="filled (default)"
+      <PrtSelect v-model="ex.filled" placeholder="filled (default)"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="outline">
-      <PrtSelect v-model="choice" variant="outline" placeholder="outline"
+      <PrtSelect v-model="ex.outline" variant="outline" placeholder="outline"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="minimal">
-      <PrtSelect v-model="choice" variant="minimal" placeholder="minimal"
+      <PrtSelect v-model="ex.minimal" variant="minimal" placeholder="minimal"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Sizes" min="19rem">
     <DemoItem label="sm">
-      <PrtSelect v-model="choice" size="sm" placeholder="small"
+      <PrtSelect v-model="ex.sm" size="sm" placeholder="small"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="lg">
-      <PrtSelect v-model="choice" size="lg" placeholder="large"
+      <PrtSelect v-model="ex.lg" size="lg" placeholder="large"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="Edges" min="19rem">
     <DemoItem label="square">
-      <PrtSelect v-model="choice" edges="square" placeholder="square"
+      <PrtSelect v-model="ex.square" edges="square" placeholder="square"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
     <DemoItem label="rounded (default)">
-      <PrtSelect v-model="choice" edges="rounded" placeholder="rounded"
+      <PrtSelect v-model="ex.rounded" edges="rounded" placeholder="rounded"
         :options="[{ value: 'a', label: 'Alpha' }, { value: 'b', label: 'Beta' }]" />
     </DemoItem>
   </DemoSection>
@@ -70,7 +70,7 @@
   <DemoSection title="Option icons — the panel is ours, so they render" min="19rem">
     <DemoItem label="icon per option (shown on the trigger too)">
       <PrtSelect
-        v-model="choice"
+        v-model="ex.icons"
         placeholder="Pick an environment…"
         :options="[
           { value: 'dev', label: 'Development', icon: 'i-lucide-flask-conical' },
@@ -84,7 +84,7 @@
   <DemoSection title="Long list — panel scrolls, flips when out of room" min="19rem">
     <DemoItem label="max-height + overflow; keyboard keeps the active row in view">
       <PrtSelect
-        v-model="choice"
+        v-model="ex.long"
         placeholder="Pick a port…"
         :options="Array.from({ length: 24 }, (_, i) => ({
           value: 3000 + i, label: 'Port ' + (3000 + i),
@@ -94,24 +94,24 @@
   </DemoSection>
 
   <DemoSection title="Number values — typed emit" min="19rem">
-    <DemoItem label="numbers stay numbers: {{ choice }} is {{ typeof choice }}">
+    <DemoItem label="numbers stay numbers: {{ ex.num }} is {{ typeof ex.num }}">
       <div class="flex flex-col gap-2">
         <PrtSelect
-          v-model="choice"
+          v-model="ex.num"
           placeholder="Pick a port…"
           :options="[
             { value: 3000, label: '3000 (dev)' },
             { value: 8080, label: '8080 (http-alt)' },
           ]"
         />
-        <span class="text-xs font-mono text-ink-faint">emitted: {{ choice }} ({{ typeof choice }})</span>
+        <span class="text-xs font-mono text-ink-faint">emitted: {{ ex.num }} ({{ typeof ex.num }})</span>
       </div>
     </DemoItem>
   </DemoSection>
 
   <DemoSection title="States" min="19rem">
     <DemoItem label="error">
-      <PrtSelect v-model="choice" error placeholder="invalid choice"
+      <PrtSelect v-model="ex.err" error placeholder="invalid choice"
         :options="[{ value: 'a', label: 'Alpha' }]" />
     </DemoItem>
     <DemoItem label="disabled">
@@ -119,7 +119,7 @@
         :options="[{ value: 'a', label: 'Alpha' }]" />
     </DemoItem>
     <DemoItem label="disabled option">
-      <PrtSelect v-model="choice" placeholder="Beta is sold out"
+      <PrtSelect v-model="ex.soldout" placeholder="Beta is sold out"
         :options="[
           { value: 'a', label: 'Alpha' },
           { value: 'b', label: 'Beta (sold out)', disabled: true },
@@ -132,7 +132,7 @@
       <PrtFormField label="Region" helper-text="Where the app deploys.">
         <template #default="{ inputProps, error, disabled }">
           <PrtSelect
-            v-model="choice"
+            v-model="ex.field"
             v-bind="inputProps"
             :error="error"
             :disabled="disabled"
@@ -155,4 +155,6 @@ import DemoSection from '@demo/DemoSection.vue'
 
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const choice = ref<string | number>('')
+// each showcase select gets its own key so they select independently
+const ex = ref<Record<string, string | number>>({ basic: '', filled: '', outline: '', minimal: '', sm: '', lg: '', square: '', rounded: '', icons: '', long: '', num: '', err: '', soldout: '', field: '' })
 </script>

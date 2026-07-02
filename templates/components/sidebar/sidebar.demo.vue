@@ -38,7 +38,7 @@
     </DemoItem>
     <DemoItem label="the header slot yields { collapsed, toggle } — wire your own control">
       <div class="h-[24rem] flex rounded-surface overflow-hidden ring-1 ring-edge bg-surface-0">
-        <PrtSidebar v-model="collapsed" :items="nav" :active="current" @select="current = $event">
+        <PrtSidebar v-model="ex.c2" :items="nav" :active="ex.cur2" @select="ex.cur2 = $event">
           <template #header="{ collapsed: c, toggle }">
             <button
               class="inline-flex items-center gap-2 font-medium text-ink rounded-control px-1 -mx-1 hover:bg-wash prt-motion-colors"
@@ -57,10 +57,10 @@
   <DemoSection title="Nested groups & the active route" min="34rem">
     <DemoItem label="a group auto-opens around its active child; the row gets the accent tick">
       <div class="h-[26rem] flex rounded-surface overflow-hidden ring-1 ring-edge bg-surface-0">
-        <PrtSidebar :items="nav" :active="current" @select="current = $event" />
+        <PrtSidebar :items="nav" :active="ex.cur3" @select="ex.cur3 = $event" />
         <main class="flex-1 min-w-0 p-5 overflow-auto">
           <p class="text-sm text-ink-muted">Open <span class="font-mono text-ink">Pipelines</span> and pick a child — the parent stays lit while a child is current.</p>
-          <p class="mt-3 text-sm text-ink-muted">Current: <span class="font-mono text-ink">{{ current }}</span></p>
+          <p class="mt-3 text-sm text-ink-muted">Current: <span class="font-mono text-ink">{{ ex.cur3 }}</span></p>
         </main>
       </div>
     </DemoItem>
@@ -75,12 +75,12 @@
   <DemoSection title="The collapsed rail — tooltips & group flyouts" min="34rem">
     <DemoItem label='forced rail (:model-value="true"): hover a leaf for its label, click a group for its flyout'>
       <div class="h-[26rem] flex rounded-surface overflow-hidden ring-1 ring-edge bg-surface-0">
-        <PrtSidebar :model-value="true" :items="nav" :active="current" @select="current = $event">
+        <PrtSidebar :model-value="true" :items="nav" :active="ex.cur4" @select="ex.cur4 = $event">
           <template #header><span class="i-lucide-hexagon text-accent" aria-hidden="true" /></template>
         </PrtSidebar>
         <main class="flex-1 min-w-0 p-5 text-sm text-ink-faint">
           Leaf icons get a PrtTooltip; the Pipelines group opens an anchored flyout
-          (the PrtMenu substrate). Current: <span class="font-mono text-ink">{{ current }}</span>
+          (the PrtMenu substrate). Current: <span class="font-mono text-ink">{{ ex.cur4 }}</span>
         </main>
       </div>
     </DemoItem>
@@ -90,12 +90,12 @@
     <DemoItem label='side="right" — border, drawer placement and flyout direction all flip'>
       <div class="h-[24rem] flex rounded-surface overflow-hidden ring-1 ring-edge bg-surface-0">
         <main class="flex-1 min-w-0 p-5 text-sm text-ink-faint">A right-docked nav — common for an inspector-style panel.</main>
-        <PrtSidebar side="right" :items="nav" :active="current" @select="current = $event" />
+        <PrtSidebar side="right" :items="nav" :active="ex.cur5" @select="ex.cur5 = $event" />
       </div>
     </DemoItem>
     <DemoItem label="seed tints the active row + the rail tick (cascades from data-seed)">
       <div class="h-[24rem] flex rounded-surface overflow-hidden ring-1 ring-edge bg-surface-0">
-        <PrtSidebar seed="4" :items="nav" :active="current" @select="current = $event" />
+        <PrtSidebar seed="4" :items="nav" :active="ex.cur6" @select="ex.cur6 = $event" />
         <main class="flex-1 min-w-0 p-5 text-sm text-ink-faint">The active fill rides the seed cascade — no color prop.</main>
       </div>
     </DemoItem>
@@ -110,6 +110,8 @@ import DemoSection from '@demo/DemoSection.vue'
 // bindings the slots reference (shared file scope; canonical decls in SourcePanel.sandboxDecls)
 const collapsed = ref(false)
 const current = ref<string | number>('projects')
+// each other sidebar demo owns its own collapse/route so they don't mirror the first
+const ex = ref<{ c2: boolean; cur2: string | number; cur3: string | number; cur4: string | number; cur5: string | number; cur6: string | number }>({ c2: false, cur2: 'projects', cur3: 'projects', cur4: 'projects', cur5: 'projects', cur6: 'projects' })
 const nav = [
   { label: 'Workspace', items: [
     { value: 'overview', label: 'Overview', icon: 'i-lucide-layout-dashboard' },
