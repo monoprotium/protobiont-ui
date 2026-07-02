@@ -1,0 +1,7 @@
+{
+  "name": "PrtFacet",
+  "description": "Facet-section chrome — header label + active count + clear emit + collapsible body around ANY control; the app owns the filter state",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

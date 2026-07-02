@@ -1,0 +1,7 @@
+{
+  "name": "PrtFilterBar",
+  "description": "Checkbox facet group — array v-model with toggle semantics, optional counts and header clear; the app owns filter semantics",
+  "category": "composite",
+  "internalDependencies": ["PrtCheckbox"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PrtInfiniteScroll",
+  "description": "Load-more engine — IntersectionObserver sentinel wrapping anything; guarded load-more emit, autoload, loader/end slots",
+  "category": "composite",
+  "internalDependencies": ["PrtLoader"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

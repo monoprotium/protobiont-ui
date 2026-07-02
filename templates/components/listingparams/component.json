@@ -1,0 +1,7 @@
+{
+  "name": "PrtListingParams",
+  "description": "Spec sheet — name/value rows on a real <dl>, zebra or hairline, mono numerals, per-row value slot",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

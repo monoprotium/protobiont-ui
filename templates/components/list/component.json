@@ -1,0 +1,7 @@
+{
+  "name": "PrtList",
+  "description": "Typographic list — deliberate rhythm, house square/dash marks, styled links; drop a list in and it looks right",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

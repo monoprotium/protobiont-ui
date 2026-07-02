@@ -1,0 +1,7 @@
+{
+  "name": "PrtListing",
+  "description": "Grid⇄list collection view — one item array, two presentations, a `view` model for the toggle; auto-fill RWD, gutters solved once",
+  "category": "composite",
+  "internalDependencies": ["PrtCard", "PrtChip"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

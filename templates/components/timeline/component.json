@@ -1,0 +1,7 @@
+{
+  "name": "PrtTimeline",
+  "description": "Timeline with the full 8-layout alignment matrix (orientation × align) — flex/grid engine, square marks on a hairline, per-item seeds",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

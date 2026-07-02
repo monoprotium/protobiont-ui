@@ -1,0 +1,7 @@
+{
+  "name": "PrtIndexBar",
+  "description": "A–Z directory — first-letter grouping + locale sort, link items, and a sticky letter rail with jump + scrollspy",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}
