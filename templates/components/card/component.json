@@ -1,0 +1,7 @@
+{
+  "name": "PrtCard",
+  "description": "Surface card with image/header/content/footer slots — hairline edges, tokenized elevation",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

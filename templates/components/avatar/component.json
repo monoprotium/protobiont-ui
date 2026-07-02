@@ -1,0 +1,7 @@
+{
+  "name": "PrtAvatar",
+  "description": "Avatar: image with seeded initials/icon fallback",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

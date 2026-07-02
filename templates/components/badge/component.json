@@ -1,0 +1,7 @@
+{
+  "name": "PrtBadge",
+  "description": "Count and status badge: inline or corner overlay, dot mode, seed or intent toned",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PrtChip",
+  "description": "Tag/label chip: variant × seed matrix, optional icon and dismiss",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

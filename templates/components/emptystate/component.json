@@ -1,0 +1,10 @@
+{
+  "name": "PrtEmptyState",
+  "description": "Neutral empty-state chrome — icon + one line + one action slot; no intent, no dismiss (that's PrtNotice)",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

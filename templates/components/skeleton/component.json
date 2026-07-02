@@ -1,0 +1,7 @@
+{
+  "name": "PrtSkeleton",
+  "description": "Loading placeholder: line, block and circle shapes, composed by the consumer",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

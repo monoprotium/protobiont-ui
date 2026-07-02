@@ -1,0 +1,7 @@
+{
+  "name": "PrtBanner",
+  "description": "Hero / promo block recipe — overlay (text over media + oklab scrim) or split (two-col); media is a slot over PrtLazyImg, container-query responsive, fluid cqi heading",
+  "category": "recipe",
+  "internalDependencies": ["PrtLazyImg", "PrtBtn"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

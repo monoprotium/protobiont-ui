@@ -1,0 +1,7 @@
+{
+  "name": "PrtCountdown",
+  "description": "Counts down to a target instant; slot-first parts render, wall-clock tick via useIntervalFn, <time> semantics",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx", "@vueuse/core"]
+}

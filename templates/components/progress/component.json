@@ -1,0 +1,7 @@
+{
+  "name": "PrtProgress",
+  "description": "Determinate progress: bar and circle (the 2025 ring). Indeterminate/top-bar duty lives in PrtLoadingBar",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

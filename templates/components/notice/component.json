@@ -1,0 +1,7 @@
+{
+  "name": "PrtNotice",
+  "description": "Inline alert: quiet surface, intent-colored icon, optional dismiss",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["clsx"]
+}

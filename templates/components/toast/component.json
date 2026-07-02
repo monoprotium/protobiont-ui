@@ -1,0 +1,7 @@
+{
+  "name": "PrtToast",
+  "description": "Toasts: useToast() queue + PrtToaster top-layer host (six positions) + presentational PrtToast (quiet/solid)",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

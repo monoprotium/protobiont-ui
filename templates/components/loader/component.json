@@ -1,0 +1,7 @@
+{
+  "name": "PrtLoader",
+  "description": "Spinner: the house icon mechanism spinning, seed-tintable",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}
