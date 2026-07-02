@@ -1,0 +1,7 @@
+{
+  "name": "PrtLanguageSwitcher",
+  "description": "App-owned locale switcher — endonyms with translate=\"no\"/:lang + OPT-IN per-option flag icon class (ready-made Iconify, e.g. i-circle-flags-es), menu/segmented/buttons presentations over PrtMenu/PrtSegmented/PrtBtn; no i18n dep, no locale data",
+  "category": "composite",
+  "internalDependencies": ["PrtMenu", "PrtSegmented", "PrtBtn"],
+  "externalDependencies": []
+}

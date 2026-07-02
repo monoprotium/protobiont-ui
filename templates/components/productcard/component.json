@@ -1,0 +1,7 @@
+{
+  "name": "PrtProductCard",
+  "description": "Storefront card recipe — PrtCard + PrtRating + PrtInputNumber + PrtBtn; slots over booleans, pre-formatted price, controlled favorite",
+  "category": "recipe",
+  "internalDependencies": ["PrtCard", "PrtRating", "PrtInputNumber", "PrtBtn"],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}

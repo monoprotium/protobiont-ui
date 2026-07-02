@@ -1,0 +1,7 @@
+{
+  "name": "PrtCheckoutOrderSummary",
+  "description": "Checkout order-summary panel — pre-formatted price strings only (zero money math), <dl> totals with aria-live, collapsed auto-apply-on-blur promo, optional quantity steppers; flat panel, slots for trust signals",
+  "category": "composite",
+  "internalDependencies": ["PrtLazyImg", "PrtInput", "PrtBtn"],
+  "externalDependencies": []
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PrtCheckoutAddressFields",
+  "description": "A no-inject grouping of PrtFormField rows with the Baymard address rules baked in (exact autocomplete table, inputmode, Address-Line-2 toggle, country→region combobox); one v-model, names drive form validation",
+  "category": "composite",
+  "internalDependencies": ["PrtFormField", "PrtInput", "PrtCombobox"],
+  "externalDependencies": []
+}

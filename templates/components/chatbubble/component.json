@@ -1,0 +1,7 @@
+{
+  "name": "PrtChatBubble",
+  "description": "Chat message bubble with the seed-driven arrow tail (CSS-var color, never runtime classes), sent/received alignment and grouping",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["class-variance-authority", "clsx"]
+}
