@@ -1,0 +1,7 @@
+{
+  "name": "PrtTooltip",
+  "description": "Tooltip on CSS anchor positioning + popover hint — zero JS layout",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": ["@vueuse/core"]
+}

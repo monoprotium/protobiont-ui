@@ -1,0 +1,11 @@
+{
+  "name": "PrtMegaMenu",
+  "description": "Mega menu — whole nav bar with bar-anchored full-width panels (popover + CSS anchor positioning, zero JS layout); data-driven link groups or a per-item panel slot",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx",
+    "@vueuse/core"
+  ]
+}

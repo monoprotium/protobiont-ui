@@ -1,0 +1,10 @@
+{
+  "name": "PrtDrawer",
+  "description": "Edge sheet (left/right/bottom) on the native <dialog> substrate — animated slide in AND out (the one JS-assisted exit), token scrim, scroll lock with reserved gutter",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

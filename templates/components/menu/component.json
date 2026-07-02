@@ -1,0 +1,10 @@
+{
+  "name": "PrtMenu",
+  "description": "Action menu on the anchored-panel substrate — consumer-provided trigger via slot props, flat or grouped items, danger items, flat full-bleed panel, select-grade keyboard model",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}

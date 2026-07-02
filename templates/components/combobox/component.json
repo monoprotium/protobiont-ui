@@ -1,0 +1,11 @@
+{
+  "name": "PrtCombobox",
+  "description": "Searchable combobox/autocomplete merge — typed values or freeText, anchored flat panel (popover=manual), filtering with a capped tail, clearable, async loading hooks",
+  "category": "composite",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx",
+    "@vueuse/core"
+  ]
+}

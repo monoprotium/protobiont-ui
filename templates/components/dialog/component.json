@@ -1,0 +1,10 @@
+{
+  "name": "PrtDialog",
+  "description": "Modal dialog on the native <dialog> substrate — top layer, token scrim, scroll lock with reserved gutter, Esc/outside close via closedby; confirm is a demo preset",
+  "category": "base",
+  "internalDependencies": [],
+  "externalDependencies": [
+    "class-variance-authority",
+    "clsx"
+  ]
+}
